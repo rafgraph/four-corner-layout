@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Four corner scroll layout</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link type="text/css" rel="stylesheet" href="four-corner-scroll.css">
+</head>
+<body>
+  <div id="tl" class="square">
+    <div class="content">
+      Top Left<br>
+      <a href="#tr">&#8594;</a>
+      <a href="#bl">&#8595;</a>
+      <a href="#br">&#8600;</a>
+    </div>
+  </div>
+
+	<div id="tr" class="square">
+    <div class="content">
+      Top Right<br>
+      <a href="#tl">&#8592;</a>
+      <a href="#br">&#8595;</a>
+      <a href="#bl">&#8601;</a>
+    </div>
+  </div>
+
+	<div id="bl" class="square">
+    <div class="content">
+      Bottom Left<br>
+      <a href="#br">&#8594;</a>
+      <a href="#tl">&#8593;</a>
+      <a href="#tr">&#8599;</a>
+    </div>
+  </div>
+
+  <div id="br" class="square">
+    <div class="content">
+      Bottom Right<br>
+      <a href="#bl">&#8592;</a>
+      <a href="#tr">&#8593;</a>
+      <a href="#tl">&#8598;</a>
+    </div>
+  </div>
+
+</body>
+</html>

@@ -1,0 +1,71 @@
+
+* {
+	font-family: "Helvetica Neue";
+}
+
+h1 {
+	font-weight: 300;
+	margin: 0;
+	margin-bottom: 5px;
+	margin-left: 10px;
+}
+
+details {
+	margin-left: 20px;
+	margin-bottom: 10px;
+}
+
+.terminal {
+	font-family: Monaco;
+	font-size: 9pt;
+	background: #c0c0c0;
+	padding-left: 0.25em;
+	padding-right: 0.25em;
+	padding-bottom: 0.15em;
+	padding-top: 0.1em;
+}
+.code-block {
+	display: block;
+}
+
+body {
+	font-family: Verdana;
+	font-size: 10pt;
+	background: #d0d0d0;
+}
+
+ul {
+	margin: 0;
+	/*background-color: gray;*/
+	padding-left: 30px;
+}
+
+li {
+	margin: 0.25em 0 .25em 0;
+}
+
+a {
+	color: black;
+}
+
+a:hover {
+	color: #339900;
+}
+
+
+/*To change the bullete style*/
+/*ul {
+  list-style: none;
+  margin-left: 0;
+  padding-left: 0;
+}
+
+li {
+  padding-left: 1em;
+  text-indent: -1em;
+}
+
+li:before {
+  content: "+";
+  padding-right: 5px;
+}*/

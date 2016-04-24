@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Four corner expand layout</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link type="text/css" rel="stylesheet" href="four-corner-expand.css">
+  <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+  <script src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+  <script src="four-corner-expand.js"></script>
+</head>
+<body>
+
+  <div id="tl" class="square">
+    <div class="content">
+      <a class="expand" href="#tl">Top Left</a>
+      <div class="expanded-content">
+        <a href="">All</a>
+        <a href="#tr">&#8594;</a>
+        <a href="#bl">&#8595;</a>
+        <a href="#br">&#8600;</a>
+      </div>
+    </div>
+  </div>
+
+  <div id="tr" class="square">
+    <div class="content">
+      <a class="expand" href="#tr">Top Right</a>
+      <div class="expanded-content">
+        <a href="">All</a>
+        <a href="#tl">&#8592;</a>
+        <a href="#br">&#8595;</a>
+        <a href="#bl">&#8601;</a>
+      </div>
+    </div>
+  </div>
+
+  <div id="bl" class="square">
+    <div class="content">
+      <a class="expand" href="#bl">Bottom Left</a>
+      <div class="expanded-content">
+        <a href="">All</a>
+        <a href="#br">&#8594;</a>
+        <a href="#tl">&#8593;</a>
+        <a href="#tr">&#8599;</a>
+      </div>
+    </div>
+  </div>
+
+  <div id="br" class="square">
+    <div class="content">
+      <a class="expand" href="#br">Bottom Right</a>
+      <div class="expanded-content">
+        <a href="">All</a>
+        <a href="#bl">&#8592;</a>
+        <a href="#tr">&#8593;</a>
+        <a href="#tl">&#8598;</a>
+    </div>
+  </div>
+
+</body>
+</html>
