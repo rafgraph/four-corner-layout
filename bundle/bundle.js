@@ -64,6 +64,14 @@
 	
 	var _Home2 = _interopRequireDefault(_Home);
 	
+	var _FourCornerScroll = __webpack_require__(233);
+	
+	var _FourCornerScroll2 = _interopRequireDefault(_FourCornerScroll);
+	
+	var _FourCornerExpand = __webpack_require__(234);
+	
+	var _FourCornerExpand2 = _interopRequireDefault(_FourCornerExpand);
+	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
 	// use custom history to not have query string with hashHistory
@@ -73,7 +81,9 @@
 	var routes = _react2.default.createElement(
 	  _reactRouter.Route,
 	  { path: '/', component: _App2.default },
-	  _react2.default.createElement(_reactRouter.IndexRoute, { component: _Home2.default })
+	  _react2.default.createElement(_reactRouter.IndexRoute, { component: _Home2.default }),
+	  _react2.default.createElement(_reactRouter.Route, { path: 'four-corner-scroll', component: _FourCornerScroll2.default }),
+	  _react2.default.createElement(_reactRouter.Route, { path: 'four-corner-expand', component: _FourCornerExpand2.default })
 	);
 	
 	(0, _reactDom.render)(_react2.default.createElement(
@@ -25866,6 +25876,58 @@
 	}
 	
 	exports.default = Home;
+
+/***/ },
+/* 233 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _react = __webpack_require__(1);
+	
+	var _react2 = _interopRequireDefault(_react);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	function FourCornerScroll() {
+	  return _react2.default.createElement(
+	    'div',
+	    null,
+	    'Four corner scroll'
+	  );
+	}
+	
+	exports.default = FourCornerScroll;
+
+/***/ },
+/* 234 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _react = __webpack_require__(1);
+	
+	var _react2 = _interopRequireDefault(_react);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	function FourCornerExpand() {
+	  return _react2.default.createElement(
+	    'div',
+	    null,
+	    'Four corner expand'
+	  );
+	}
+	
+	exports.default = FourCornerExpand;
 
 /***/ }
 /******/ ]);
