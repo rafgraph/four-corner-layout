@@ -8,10 +8,6 @@ import Home from './components/Home';
 import FourCornerScroll from './components/FourCornerScroll';
 import FourCornerExpand from './components/FourCornerExpand';
 
-// use custom history to not have query string with hashHistory
-// useRouterHistory creates a composable higher-order function
-// const appHistory = useRouterHistory(createHashHistory)({ queryKey: false })
-
 const routes = (
   <Route path="/" component={App}>
     <IndexRoute component={Home} />
@@ -20,7 +16,6 @@ const routes = (
     <Route path="four-corner-expand" component={FourCornerExpand} />
   </Route>
 );
-
 
 render(
   <Router history={browserHistory}>{routes}</Router>,

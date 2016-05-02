@@ -74,10 +74,6 @@
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
-	// use custom history to not have query string with hashHistory
-	// useRouterHistory creates a composable higher-order function
-	// const appHistory = useRouterHistory(createHashHistory)({ queryKey: false })
-	
 	var routes = _react2.default.createElement(
 	  _reactRouter.Route,
 	  { path: '/', component: _App2.default },
@@ -25871,6 +25867,11 @@
 	          'Four corner expand'
 	        )
 	      )
+	    ),
+	    _react2.default.createElement(
+	      _reactRouter.Link,
+	      { to: '/four-corner-scroll#tr' },
+	      'link four corner scroll bottom right'
 	    )
 	  );
 	}
@@ -25895,23 +25896,50 @@
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
-	function FourCornerScroll() {
+	function FourCornerScroll(props) {
+	
+	  if (props.location.hash) {
+	    // push onto callback queue so it runs after the DOM is updated
+	    // this is required when navigating from a different page so that
+	    // the element is redered on the page before trying to getElementById
+	    setTimeout(function () {
+	      var id = props.location.hash.replace("#", "");
+	      var element = document.getElementById(id);
+	      if (element) element.scrollIntoView();
+	    }, 0);
+	  }
+	
 	  return _react2.default.createElement(
 	    'div',
-	    null,
+	    { style: { height: '200vh', width: '200vw' } },
 	    _react2.default.createElement(
 	      'div',
-	      { id: 'abc', style: { height: '100vh' } },
+	      { id: 'tl', style: { height: '100vh', width: '100vw', float: 'left' } },
+	      _react2.default.createElement(
+	        'div',
+	        null,
+	        'Top left'
+	      ),
 	      _react2.default.createElement(
 	        _reactRouter.Link,
-	        { to: '#def' },
-	        'Four corner scroll'
+	        { to: '/' + props.route.path + '#br' },
+	        'link to bottom right'
 	      )
 	    ),
 	    _react2.default.createElement(
 	      'div',
-	      { id: 'def', style: { height: '100vh' } },
-	      'Second section'
+	      { id: 'tr', style: { height: '100vh', width: '100vw', float: 'right' } },
+	      'Top right'
+	    ),
+	    _react2.default.createElement(
+	      'div',
+	      { id: 'bl', style: { height: '100vh', width: '100vw', float: 'left' } },
+	      'Bottom left'
+	    ),
+	    _react2.default.createElement(
+	      'div',
+	      { id: 'br', style: { height: '100vh', width: '100vw', float: 'right' } },
+	      'Bottom right'
 	    )
 	  );
 	}
