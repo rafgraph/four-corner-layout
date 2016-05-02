@@ -1,9 +1,9 @@
 module.exports = {
   context: __dirname,
-  entry: "./index.js",
+  entry: './index.js',
   output: {
-    path: __dirname + "/bundle",
-    filename: "bundle.js",
+    path: __dirname + '/build',
+    filename: 'bundle.js',
   },
   module: {
     loaders: [
@@ -18,7 +18,7 @@ module.exports = {
     ]
   },
   resolve: {
-    extensions: ["", ".js", ".jsx"]
+    extensions: ['', '.js', '.jsx']
   },
   devtool: 'source-map'
 };
