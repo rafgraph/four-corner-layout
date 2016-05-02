@@ -76,7 +76,7 @@
 	
 	// use custom history to not have query string with hashHistory
 	// useRouterHistory creates a composable higher-order function
-	var appHistory = (0, _reactRouter.useRouterHistory)(_history.createHashHistory)({ queryKey: false });
+	// const appHistory = useRouterHistory(createHashHistory)({ queryKey: false })
 	
 	var routes = _react2.default.createElement(
 	  _reactRouter.Route,
@@ -88,7 +88,7 @@
 	
 	(0, _reactDom.render)(_react2.default.createElement(
 	  _reactRouter.Router,
-	  { history: appHistory },
+	  { history: _reactRouter.browserHistory },
 	  routes
 	), document.getElementById('root'));
 
@@ -25891,13 +25891,28 @@
 	
 	var _react2 = _interopRequireDefault(_react);
 	
+	var _reactRouter = __webpack_require__(166);
+	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
 	function FourCornerScroll() {
 	  return _react2.default.createElement(
 	    'div',
 	    null,
-	    'Four corner scroll'
+	    _react2.default.createElement(
+	      'div',
+	      { id: 'abc', style: { height: '100vh' } },
+	      _react2.default.createElement(
+	        _reactRouter.Link,
+	        { to: '#def' },
+	        'Four corner scroll'
+	      )
+	    ),
+	    _react2.default.createElement(
+	      'div',
+	      { id: 'def', style: { height: '100vh' } },
+	      'Second section'
+	    )
 	  );
 	}
 	

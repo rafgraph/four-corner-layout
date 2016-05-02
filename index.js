@@ -1,6 +1,6 @@
 import React from 'react';
 import { render } from 'react-dom';
-import { Router, Route, IndexRoute, useRouterHistory} from 'react-router';
+import { Router, Route, IndexRoute, browserHistory} from 'react-router';
 import { createHashHistory } from 'history';
 
 import App from './components/App';
@@ -10,7 +10,7 @@ import FourCornerExpand from './components/FourCornerExpand';
 
 // use custom history to not have query string with hashHistory
 // useRouterHistory creates a composable higher-order function
-const appHistory = useRouterHistory(createHashHistory)({ queryKey: false })
+// const appHistory = useRouterHistory(createHashHistory)({ queryKey: false })
 
 const routes = (
   <Route path="/" component={App}>
@@ -23,6 +23,6 @@ const routes = (
 
 
 render(
-  <Router history={appHistory}>{routes}</Router>,
+  <Router history={browserHistory}>{routes}</Router>,
   document.getElementById('root')
 )
