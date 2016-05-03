@@ -25795,7 +25795,7 @@
 /* 231 */
 /***/ function(module, exports, __webpack_require__) {
 
-	'use strict';
+	"use strict";
 	
 	Object.defineProperty(exports, "__esModule", {
 	  value: true
@@ -25809,6 +25809,19 @@
 	
 	function App(_ref) {
 	  var children = _ref.children;
+	  var location = _ref.location;
+	
+	
+	  if (location.hash) {
+	    // push onto callback queue so it runs after the DOM is updated
+	    // this is required when navigating from a different page so that
+	    // the element is redered on the page before trying to getElementById
+	    setTimeout(function () {
+	      var id = location.hash.replace("#", "");
+	      var element = document.getElementById(id);
+	      if (element) element.scrollIntoView();
+	    }, 0);
+	  }
 	
 	  return children;
 	}
@@ -25919,17 +25932,6 @@
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
 	function FourCornerScroll(props) {
-	
-	  if (props.location.hash) {
-	    // push onto callback queue so it runs after the DOM is updated
-	    // this is required when navigating from a different page so that
-	    // the element is redered on the page before trying to getElementById
-	    setTimeout(function () {
-	      var id = props.location.hash.replace("#", "");
-	      var element = document.getElementById(id);
-	      if (element) element.scrollIntoView();
-	    }, 0);
-	  }
 	
 	  return _react2.default.createElement(
 	    'div',
