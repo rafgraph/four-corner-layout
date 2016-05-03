@@ -77,11 +77,11 @@
 	///////////////////////////////////////////////////////////////////////////////
 	// redirect for gh-pages, b/c gh-pages are always availble at /repo-name
 	// https://help.github.com/articles/custom-domain-redirects-for-github-pages-sites/
-	var githubRepoName = "four-corner-layout";
+	var githubRepoName = 'four-corner-layout';
 	// the custom domain where the site is located
-	var domain = 'http://' + githubRepoName + '.' + window.location.host.replace('www.', '');
+	var domain = 'http://' + githubRepoName + '.' + location.host.replace('www.', '');
 	function redirectToDomain() {
-	  window.location.replace(domain);
+	  location.replace(domain);
 	}
 	///////////////////////////////////////////////////////////////////////////////
 	
@@ -25795,7 +25795,7 @@
 /* 231 */
 /***/ function(module, exports, __webpack_require__) {
 
-	"use strict";
+	'use strict';
 	
 	Object.defineProperty(exports, "__esModule", {
 	  value: true
@@ -25817,7 +25817,7 @@
 	    // this is required when navigating from a different page so that
 	    // the element is redered on the page before trying to getElementById
 	    setTimeout(function () {
-	      var id = location.hash.replace("#", "");
+	      var id = location.hash.replace('#', '');
 	      var element = document.getElementById(id);
 	      if (element) element.scrollIntoView();
 	    }, 0);
@@ -25857,7 +25857,7 @@
 	
 	function Home() {
 	
-	  var description = "Four presentation pages on a single web page, each presentation page is immersive and dynamically resizes to the size of the window — inspired by print media: a newspaper’s fold combined with a magazine’s left and right pages.";
+	  var description = 'Four presentation pages on a single web page, each presentation page is immersive and dynamically resizes to the size of the window — inspired by print media: a newspaper’s fold combined with a magazine’s left and right pages.';
 	
 	  return _react2.default.createElement(
 	    'div',
