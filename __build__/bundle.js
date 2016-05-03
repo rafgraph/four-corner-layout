@@ -74,12 +74,25 @@
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
+	///////////////////////////////////////////////////////////////////////////////
+	// redirect for gh-pages, b/c gh-pages are always availble at /repo-name
+	// https://help.github.com/articles/custom-domain-redirects-for-github-pages-sites/
+	var githubRepoName = "four-corner-layout";
+	// the custom domain where the site is located
+	var domain = 'http://' + githubRepoName + '.' + window.location.host.replace('www.', '');
+	function redirectToDomain() {
+	  window.location.replace(domain);
+	}
+	///////////////////////////////////////////////////////////////////////////////
+	
 	var routes = _react2.default.createElement(
 	  _reactRouter.Route,
 	  { path: '/', component: _App2.default },
 	  _react2.default.createElement(_reactRouter.IndexRoute, { component: _Home2.default }),
 	  _react2.default.createElement(_reactRouter.Route, { path: 'four-corner-scroll', component: _FourCornerScroll2.default }),
-	  _react2.default.createElement(_reactRouter.Route, { path: 'four-corner-expand', component: _FourCornerExpand2.default })
+	  _react2.default.createElement(_reactRouter.Route, { path: 'four-corner-expand', component: _FourCornerExpand2.default }),
+	  '// redirect for gh-pages, b/c gh-pages are always availble at /repo-name',
+	  _react2.default.createElement(_reactRouter.Route, { path: githubRepoName, onEnter: redirectToDomain })
 	);
 	
 	(0, _reactDom.render)(_react2.default.createElement(
@@ -25871,7 +25884,16 @@
 	    _react2.default.createElement(
 	      _reactRouter.Link,
 	      { to: '/four-corner-scroll#tr' },
-	      'link four corner scroll bottom right'
+	      'link four corner scroll top right'
+	    ),
+	    _react2.default.createElement(
+	      'div',
+	      null,
+	      _react2.default.createElement(
+	        _reactRouter.Link,
+	        { to: '/four-corner-layout' },
+	        'test redirect'
+	      )
 	    )
 	  );
 	}

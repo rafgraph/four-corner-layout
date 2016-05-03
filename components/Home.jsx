@@ -14,7 +14,10 @@ function Home() {
         <li><Link to="/four-corner-scroll">Four corner scroll</Link></li>
         <li><Link to="/four-corner-expand">Four corner expand</Link></li>
       </ul>
-      <Link to='/four-corner-scroll#tr'>link four corner scroll bottom right</Link>
+      <Link to='/four-corner-scroll#tr'>link four corner scroll top right</Link>
+      <div>
+        <Link to='/four-corner-layout'>test redirect</Link>
+      </div>
 
     </div>
   )
