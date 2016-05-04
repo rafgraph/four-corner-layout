@@ -75,29 +75,71 @@
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
 	///////////////////////////////////////////////////////////////////////////////
-	// redirect for gh-pages, b/c gh-pages are always availble at /repo-name
+	// redirect for github pages, b/c gh-pages are always availble at /my-repo-name
 	// https://help.github.com/articles/custom-domain-redirects-for-github-pages-sites/
+	// SET THIS: e.g. my-repo-name
 	var githubRepoName = 'four-corner-layout';
 	// the custom domain where the site is located
+	// SET THIS: e.g. http://subdomain.example.tld, or http://www.example.tld
 	var domain = 'http://' + githubRepoName + '.' + location.host.replace('www.', '');
 	function redirectToDomain() {
 	  location.replace(domain);
 	}
 	///////////////////////////////////////////////////////////////////////////////
 	
-	var routes = _react2.default.createElement(
+	// function onChangeScroll(prevState, nextState) {
+	//   console.log(nextState);
+	//   const hash = nextState.location.hash;
+	//
+	//   if (hash !== '') {
+	//     // push onto callback queue so it runs after the DOM is updated
+	//     // this is required when navigating from a different page so that
+	//     // the element is redered on the page before trying to getElementById
+	//     setTimeout(() => {
+	//       let id = hash.replace('#', '');
+	//       let element = document.getElementById(id);
+	//       if (element) element.scrollIntoView();
+	//     }, 0);
+	//   }
+	// }
+	
+	var routes =
+	// <Route path='/' component={App} onChange={onChangeScroll} >
+	_react2.default.createElement(
 	  _reactRouter.Route,
 	  { path: '/', component: _App2.default },
 	  _react2.default.createElement(_reactRouter.IndexRoute, { component: _Home2.default }),
 	  _react2.default.createElement(_reactRouter.Route, { path: 'four-corner-scroll', component: _FourCornerScroll2.default }),
 	  _react2.default.createElement(_reactRouter.Route, { path: 'four-corner-expand', component: _FourCornerExpand2.default }),
-	  '// redirect for gh-pages, b/c gh-pages are always availble at /repo-name',
+	  '// redirect for github pages',
 	  _react2.default.createElement(_reactRouter.Route, { path: githubRepoName, onEnter: redirectToDomain })
 	);
 	
+	function onUpdateFuncs() {
+	  // call other onUpdate functions
+	  // fooUpdate();
+	  hashLinkScroll();
+	}
+	
+	function hashLinkScroll() {
+	  console.log('onUpdate');
+	  var hash = window.location.hash;
+	
+	  if (hash !== '') {
+	    // push onto callback queue so it runs after the DOM is updated
+	    // this is required when navigating from a different page so that
+	    // the element is rendered on the page before trying to getElementById
+	    setTimeout(function () {
+	      var id = hash.replace('#', '');
+	      var element = document.getElementById(id);
+	      if (element) element.scrollIntoView();
+	    }, 0);
+	  }
+	}
+	
 	(0, _reactDom.render)(_react2.default.createElement(
 	  _reactRouter.Router,
-	  { history: _reactRouter.browserHistory },
+	  { history: _reactRouter.browserHistory, onUpdate: onUpdateFuncs },
 	  routes
 	), document.getElementById('root'));
 
@@ -25812,28 +25854,19 @@
 	  var location = _ref.location;
 	
 	
-	  if (location.hash) {
-	    // push onto callback queue so it runs after the DOM is updated
-	    // this is required when navigating from a different page so that
-	    // the element is redered on the page before trying to getElementById
-	    setTimeout(function () {
-	      var id = location.hash.replace('#', '');
-	      var element = document.getElementById(id);
-	      if (element) element.scrollIntoView();
-	    }, 0);
-	  }
+	  // if (location.hash) {
+	  //   // push onto callback queue so it runs after the DOM is updated
+	  //   // this is required when navigating from a different page so that
+	  //   // the element is redered on the page before trying to getElementById
+	  //   setTimeout(() => {
+	  //     let id = location.hash.replace('#', '');
+	  //     let element = document.getElementById(id);
+	  //     if (element) element.scrollIntoView();
+	  //   }, 0);
+	  // }
 	
 	  return children;
 	}
-	
-	// function App(props) {
-	//   const a = function() {
-	//     console.log(props);
-	//     return <div>hellooo wooorld</div>
-	//   }
-	//   // debugger;
-	//   return a();
-	// }
 	
 	exports.default = App;
 
