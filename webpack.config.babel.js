@@ -13,7 +13,7 @@ export default {
     ],
   },
   resolve: {
-    extensions: ['', '.js', '.jsx']
+    extensions: ['', '.js', '.jsx'],
   },
   plugins: (() => {
     if (process.argv.indexOf('-p') !== -1) {
