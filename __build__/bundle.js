@@ -26019,10 +26019,32 @@
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	function ArrowTest() {
+	  var unicodeArrows = {
+	    left: '←',
+	    top: '↑',
+	    right: '→',
+	    bottom: '↓',
+	    topLeft: '↖',
+	    topRight: '↗',
+	    bottomRight: '↘',
+	    bottomLeft: '↙'
+	  };
+
 	  return _react2.default.createElement(
 	    'div',
 	    null,
-	    'arrow test'
+	    _react2.default.createElement(
+	      'h3',
+	      null,
+	      'Arrow Test'
+	    ),
+	    Object.keys(unicodeArrows).map(function (key) {
+	      return _react2.default.createElement(
+	        'div',
+	        { key: key },
+	        unicodeArrows[key]
+	      );
+	    })
 	  );
 	}
 
