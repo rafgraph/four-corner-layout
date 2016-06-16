@@ -1,10 +1,14 @@
 import React from 'react';
 import { Link } from 'react-router';
+import ArrowTest from './ArrowTest';
 
 
 function Home() {
-
-  const description = 'Four presentation pages on a single web page, each presentation page is immersive and dynamically resizes to the size of the window — inspired by print media: a newspaper’s fold combined with a magazine’s left and right pages.'
+  const description =
+    'Four presentation pages on a single web page, each presentation page' +
+    'is immersive and dynamically resizes to the size of the' +
+    'window — inspired by print media: a newspaper’s fold combined' +
+    'with a magazine’s left and right pages.';
 
   return (
     <div>
@@ -15,8 +19,9 @@ function Home() {
         <li><Link to="/four-corner-expand">Four corner expand</Link></li>
       </ul>
       <Link to="/four-corner-scroll#tr">link four corner scroll top right</Link>
+      <ArrowTest />
     </div>
-  )
+  );
 }
 
 
