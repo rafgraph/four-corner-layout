@@ -26030,6 +26030,69 @@
 	    bottomLeft: '↙'
 	  };
 
+	  var svgArrows = {
+	    left: _react2.default.createElement(
+	      'svg',
+	      { xmlns: 'http://www.w3.org/2000/svg', width: '20', height: '20', viewBox: '0 0 900 300' },
+	      _react2.default.createElement('path', { d: 'M900 183.418H232.596V300L0 150 232.596 0v116.582H900v66.836z' })
+	    ),
+	    right: _react2.default.createElement(
+	      'svg',
+	      { xmlns: 'http://www.w3.org/2000/svg', width: '20', height: '20', viewBox: '0 0 900 300' },
+	      _react2.default.createElement('path', { d: 'M0 116.582h667.404V0L900 150 667.404 300V183.418H0v-66.836z' })
+	    ),
+	    top: _react2.default.createElement(
+	      'svg',
+	      { xmlns: 'http://www.w3.org/2000/svg', width: '20', height: '20', viewBox: '0 0 300 900' },
+	      _react2.default.createElement('path', { d: 'M116.582 900V232.596H0L150 0l150 232.596H183.418V900h-66.836z' })
+	    ),
+	    bottom: _react2.default.createElement(
+	      'svg',
+	      { xmlns: 'http://www.w3.org/2000/svg', width: '20', height: '20', viewBox: '0 0 300 900' },
+	      _react2.default.createElement('path', { d: 'M183.418 0v667.404H300L150 900 0 667.404h116.582V0h66.836z' })
+	    ),
+	    topRight: _react2.default.createElement(
+	      'svg',
+	      {
+	        xmlns: 'http://www.w3.org/2000/svg', width: '15', height: '15', viewBox: '0 0 660.026 660.026',
+	        style: { margin: 'auto', display: 'block' }
+	      },
+	      _react2.default.createElement('path', {
+	        d: 'M0 612.766L471.926 140.84 389.49 58.404 660.026 0l-58.404 270.536-82.436-82.436L47.26 660.026 0 612.766z'
+	      })
+	    ),
+	    topLeft: _react2.default.createElement(
+	      'svg',
+	      {
+	        xmlns: 'http://www.w3.org/2000/svg', width: '15', height: '15', viewBox: '0 0 660.026 660.026',
+	        style: { margin: 'auto', display: 'block' }
+	      },
+	      _react2.default.createElement('path', {
+	        d: 'M612.766 660.026L140.84 188.1l-82.436 82.436L0 0l270.536 58.404L188.1 140.84l471.926 471.926-47.26 47.26z'
+	      })
+	    ),
+	    bottomRight: _react2.default.createElement(
+	      'svg',
+	      {
+	        xmlns: 'http://www.w3.org/2000/svg', width: '15', height: '15', viewBox: '0 0 660.026 660.026',
+	        style: { margin: 'auto', display: 'block' }
+	      },
+	      _react2.default.createElement('path', {
+	        d: 'M47.26 0l471.926 471.926 82.436-82.436 58.404 270.536-270.536-58.404 82.436-82.436L0 47.26 47.26 0z'
+	      })
+	    ),
+	    bottomLeft: _react2.default.createElement(
+	      'svg',
+	      {
+	        xmlns: 'http://www.w3.org/2000/svg', width: '15', height: '15', viewBox: '0 0 660.026 660.026',
+	        style: { margin: 'auto', display: 'block' }
+	      },
+	      _react2.default.createElement('path', {
+	        d: 'M660.026 47.26L188.1 519.186l82.436 82.436L0 660.026 58.404 389.49l82.436 82.436L612.766 0l47.26 47.26z'
+	      })
+	    )
+	  };
+
 	  return _react2.default.createElement(
 	    'div',
 	    null,
@@ -26043,6 +26106,13 @@
 	        'div',
 	        { key: key },
 	        unicodeArrows[key]
+	      );
+	    }),
+	    Object.keys(svgArrows).map(function (key) {
+	      return _react2.default.createElement(
+	        'div',
+	        { key: key, style: { width: '20px', height: '20px', margin: '10px 0' } },
+	        svgArrows[key]
 	      );
 	    })
 	  );
