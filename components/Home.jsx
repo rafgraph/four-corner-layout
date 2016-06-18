@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router';
 import ArrowTest from './ArrowTest';
+import Corner from './Corner';
 
 
 function Home() {
@@ -20,6 +21,8 @@ function Home() {
       </ul>
       <Link to="/four-corner-scroll#tr">link four corner scroll top right</Link>
       <ArrowTest />
+      <h2>corner:</h2>
+      <Corner title="Top Left" location={{ pathname: '/' }} expanded />
     </div>
   );
 }

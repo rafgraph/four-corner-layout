@@ -62,11 +62,11 @@
 
 	var _Home2 = _interopRequireDefault(_Home);
 
-	var _FourCornerScroll = __webpack_require__(233);
+	var _FourCornerScroll = __webpack_require__(234);
 
 	var _FourCornerScroll2 = _interopRequireDefault(_FourCornerScroll);
 
-	var _FourCornerExpand = __webpack_require__(234);
+	var _FourCornerExpand = __webpack_require__(235);
 
 	var _FourCornerExpand2 = _interopRequireDefault(_FourCornerExpand);
 
@@ -25951,6 +25951,10 @@
 
 	var _ArrowTest2 = _interopRequireDefault(_ArrowTest);
 
+	var _Corner = __webpack_require__(233);
+
+	var _Corner2 = _interopRequireDefault(_Corner);
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	function Home() {
@@ -25996,7 +26000,13 @@
 	      { to: '/four-corner-scroll#tr' },
 	      'link four corner scroll top right'
 	    ),
-	    _react2.default.createElement(_ArrowTest2.default, null)
+	    _react2.default.createElement(_ArrowTest2.default, null),
+	    _react2.default.createElement(
+	      'h2',
+	      null,
+	      'corner:'
+	    ),
+	    _react2.default.createElement(_Corner2.default, { title: 'Top Left', location: { pathname: '/' }, expanded: true })
 	  );
 	}
 
@@ -26117,8 +26127,15 @@
 	        svgArrows[key]
 	      );
 	    }),
+	    _react2.default.createElement(_SvgArrows.LeftArrow, null),
+	    _react2.default.createElement(_SvgArrows.RightArrow, null),
+	    _react2.default.createElement(_SvgArrows.TopArrow, null),
+	    _react2.default.createElement(_SvgArrows.BottomArrow, null),
+	    _react2.default.createElement(_SvgArrows.TopLeftArrow, null),
+	    _react2.default.createElement(_SvgArrows.TopRightArrow, null),
+	    _react2.default.createElement(_SvgArrows.BottomLeftArrow, null),
+	    _react2.default.createElement(_SvgArrows.BottomRightArrow, null),
 	    _react2.default.createElement(_SvgArrows.LeftArrow, {
-	      width: '20', height: '20',
 	      style: { display: 'block', margin: 'auto' },
 	      onClick: function onClick() {
 	        return alert('You clicked left arrow');
@@ -26162,34 +26179,44 @@
 	var propTypes = {
 	  width: _react.PropTypes.string,
 	  height: _react.PropTypes.string,
+	  scale: _react.PropTypes.number,
 	  title: _react.PropTypes.string,
 	  className: _react.PropTypes.string
 	};
 
-	var defaultPropsPerpendicularArrow = {
-	  width: '20',
-	  height: '20'
+	var defaultPropsVerticalArrow = {
+	  height: '21',
+	  width: '7',
+	  scale: 1
+	};
+
+	var defaultPropsHorizontalArrow = {
+	  width: '21',
+	  height: '7',
+	  scale: 1
 	};
 
 	var defaultPropsDiagonalArrow = {
 	  width: '15',
-	  height: '15'
+	  height: '15',
+	  scale: 1
 	};
 
 	function LeftArrow(_ref) {
 	  var width = _ref.width;
 	  var height = _ref.height;
+	  var scale = _ref.scale;
 	  var className = _ref.className;
 	  var _ref$title = _ref.title;
 	  var title = _ref$title === undefined ? 'Left Arrow' : _ref$title;
 
-	  var other = _objectWithoutProperties(_ref, ['width', 'height', 'className', 'title']);
+	  var other = _objectWithoutProperties(_ref, ['width', 'height', 'scale', 'className', 'title']);
 
 	  return _react2.default.createElement(
 	    'svg',
 	    _extends({}, other, {
 	      className: 'arrow left-arrow' + (className ? ' ' + className : ''),
-	      xmlns: 'http://www.w3.org/2000/svg', width: width, height: height, viewBox: '0 0 900 300',
+	      xmlns: 'http://www.w3.org/2000/svg', width: width * scale, height: height * scale, viewBox: '0 0 900 300',
 	      'aria-label': title
 	    }),
 	    _react2.default.createElement(
@@ -26204,17 +26231,18 @@
 	function RightArrow(_ref2) {
 	  var width = _ref2.width;
 	  var height = _ref2.height;
+	  var scale = _ref2.scale;
 	  var className = _ref2.className;
 	  var _ref2$title = _ref2.title;
 	  var title = _ref2$title === undefined ? 'Right Arrow' : _ref2$title;
 
-	  var other = _objectWithoutProperties(_ref2, ['width', 'height', 'className', 'title']);
+	  var other = _objectWithoutProperties(_ref2, ['width', 'height', 'scale', 'className', 'title']);
 
 	  return _react2.default.createElement(
 	    'svg',
 	    _extends({}, other, {
 	      className: 'arrow right-arrow' + (className ? ' ' + className : ''),
-	      xmlns: 'http://www.w3.org/2000/svg', width: width, height: height, viewBox: '0 0 900 300',
+	      xmlns: 'http://www.w3.org/2000/svg', width: width * scale, height: height * scale, viewBox: '0 0 900 300',
 	      'aria-label': title
 	    }),
 	    _react2.default.createElement(
@@ -26229,17 +26257,18 @@
 	function TopArrow(_ref3) {
 	  var width = _ref3.width;
 	  var height = _ref3.height;
+	  var scale = _ref3.scale;
 	  var className = _ref3.className;
 	  var _ref3$title = _ref3.title;
 	  var title = _ref3$title === undefined ? 'Top Arrow' : _ref3$title;
 
-	  var other = _objectWithoutProperties(_ref3, ['width', 'height', 'className', 'title']);
+	  var other = _objectWithoutProperties(_ref3, ['width', 'height', 'scale', 'className', 'title']);
 
 	  return _react2.default.createElement(
 	    'svg',
 	    _extends({}, other, {
 	      className: 'arrow top-arrow' + (className ? ' ' + className : ''),
-	      xmlns: 'http://www.w3.org/2000/svg', width: width, height: height, viewBox: '0 0 300 900',
+	      xmlns: 'http://www.w3.org/2000/svg', width: width * scale, height: height * scale, viewBox: '0 0 300 900',
 	      'aria-label': title
 	    }),
 	    _react2.default.createElement(
@@ -26254,17 +26283,18 @@
 	function BottomArrow(_ref4) {
 	  var width = _ref4.width;
 	  var height = _ref4.height;
+	  var scale = _ref4.scale;
 	  var className = _ref4.className;
 	  var _ref4$title = _ref4.title;
 	  var title = _ref4$title === undefined ? 'Bottom Arrow' : _ref4$title;
 
-	  var other = _objectWithoutProperties(_ref4, ['width', 'height', 'className', 'title']);
+	  var other = _objectWithoutProperties(_ref4, ['width', 'height', 'scale', 'className', 'title']);
 
 	  return _react2.default.createElement(
 	    'svg',
 	    _extends({}, other, {
 	      className: 'arrow bottom-arrow' + (className ? ' ' + className : ''),
-	      xmlns: 'http://www.w3.org/2000/svg', width: width, height: height, viewBox: '0 0 300 900',
+	      xmlns: 'http://www.w3.org/2000/svg', width: width * scale, height: height * scale, viewBox: '0 0 300 900',
 	      'aria-label': title
 	    }),
 	    _react2.default.createElement(
@@ -26279,17 +26309,18 @@
 	function TopLeftArrow(_ref5) {
 	  var width = _ref5.width;
 	  var height = _ref5.height;
+	  var scale = _ref5.scale;
 	  var className = _ref5.className;
 	  var _ref5$title = _ref5.title;
 	  var title = _ref5$title === undefined ? 'Top Left Arrow' : _ref5$title;
 
-	  var other = _objectWithoutProperties(_ref5, ['width', 'height', 'className', 'title']);
+	  var other = _objectWithoutProperties(_ref5, ['width', 'height', 'scale', 'className', 'title']);
 
 	  return _react2.default.createElement(
 	    'svg',
 	    _extends({}, other, {
 	      className: 'arrow top-left-arrow' + (className ? ' ' + className : ''),
-	      xmlns: 'http://www.w3.org/2000/svg', width: width, height: height, viewBox: '0 0 660.026 660.026',
+	      xmlns: 'http://www.w3.org/2000/svg', width: width * scale, height: height * scale, viewBox: '0 0 660.026 660.026',
 	      'aria-label': title
 	    }),
 	    _react2.default.createElement(
@@ -26306,17 +26337,18 @@
 	function TopRightArrow(_ref6) {
 	  var width = _ref6.width;
 	  var height = _ref6.height;
+	  var scale = _ref6.scale;
 	  var className = _ref6.className;
 	  var _ref6$title = _ref6.title;
 	  var title = _ref6$title === undefined ? 'Top Right Arrow' : _ref6$title;
 
-	  var other = _objectWithoutProperties(_ref6, ['width', 'height', 'className', 'title']);
+	  var other = _objectWithoutProperties(_ref6, ['width', 'height', 'scale', 'className', 'title']);
 
 	  return _react2.default.createElement(
 	    'svg',
 	    _extends({}, other, {
 	      className: 'arrow top-right-arrow' + (className ? ' ' + className : ''),
-	      xmlns: 'http://www.w3.org/2000/svg', width: width, height: height, viewBox: '0 0 660.026 660.026',
+	      xmlns: 'http://www.w3.org/2000/svg', width: width * scale, height: height * scale, viewBox: '0 0 660.026 660.026',
 	      'aria-label': title
 	    }),
 	    _react2.default.createElement(
@@ -26333,17 +26365,18 @@
 	function BottomLeftArrow(_ref7) {
 	  var width = _ref7.width;
 	  var height = _ref7.height;
+	  var scale = _ref7.scale;
 	  var className = _ref7.className;
 	  var _ref7$title = _ref7.title;
 	  var title = _ref7$title === undefined ? 'Bottom Left Arrow' : _ref7$title;
 
-	  var other = _objectWithoutProperties(_ref7, ['width', 'height', 'className', 'title']);
+	  var other = _objectWithoutProperties(_ref7, ['width', 'height', 'scale', 'className', 'title']);
 
 	  return _react2.default.createElement(
 	    'svg',
 	    _extends({}, other, {
 	      className: 'arrow bottom-left-arrow' + (className ? ' ' + className : ''),
-	      xmlns: 'http://www.w3.org/2000/svg', width: width, height: height, viewBox: '0 0 660.026 660.026',
+	      xmlns: 'http://www.w3.org/2000/svg', width: width * scale, height: height * scale, viewBox: '0 0 660.026 660.026',
 	      'aria-label': title
 	    }),
 	    _react2.default.createElement(
@@ -26360,17 +26393,18 @@
 	function BottomRightArrow(_ref8) {
 	  var width = _ref8.width;
 	  var height = _ref8.height;
+	  var scale = _ref8.scale;
 	  var className = _ref8.className;
 	  var _ref8$title = _ref8.title;
 	  var title = _ref8$title === undefined ? 'Bottom Right Arrow' : _ref8$title;
 
-	  var other = _objectWithoutProperties(_ref8, ['width', 'height', 'className', 'title']);
+	  var other = _objectWithoutProperties(_ref8, ['width', 'height', 'scale', 'className', 'title']);
 
 	  return _react2.default.createElement(
 	    'svg',
 	    _extends({}, other, {
 	      className: 'arrow bottom-right-arrow' + (className ? ' ' + className : ''),
-	      xmlns: 'http://www.w3.org/2000/svg', width: width, height: height, viewBox: '0 0 660.026 660.026',
+	      xmlns: 'http://www.w3.org/2000/svg', width: width * scale, height: height * scale, viewBox: '0 0 660.026 660.026',
 	      'aria-label': title
 	    }),
 	    _react2.default.createElement(
@@ -26385,13 +26419,13 @@
 	}
 
 	LeftArrow.propTypes = propTypes;
-	LeftArrow.defaultProps = defaultPropsPerpendicularArrow;
+	LeftArrow.defaultProps = defaultPropsHorizontalArrow;
 	RightArrow.propTypes = propTypes;
-	RightArrow.defaultProps = defaultPropsPerpendicularArrow;
+	RightArrow.defaultProps = defaultPropsHorizontalArrow;
 	TopArrow.propTypes = propTypes;
-	TopArrow.defaultProps = defaultPropsPerpendicularArrow;
+	TopArrow.defaultProps = defaultPropsVerticalArrow;
 	BottomArrow.propTypes = propTypes;
-	BottomArrow.defaultProps = defaultPropsPerpendicularArrow;
+	BottomArrow.defaultProps = defaultPropsVerticalArrow;
 	TopLeftArrow.propTypes = propTypes;
 	TopLeftArrow.defaultProps = defaultPropsDiagonalArrow;
 	TopRightArrow.propTypes = propTypes;
@@ -26412,6 +26446,101 @@
 
 /***/ },
 /* 233 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _slicedToArray = function () { function sliceIterator(arr, i) { var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"]) _i["return"](); } finally { if (_d) throw _e; } } return _arr; } return function (arr, i) { if (Array.isArray(arr)) { return arr; } else if (Symbol.iterator in Object(arr)) { return sliceIterator(arr, i); } else { throw new TypeError("Invalid attempt to destructure non-iterable instance"); } }; }();
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _reactRouter = __webpack_require__(168);
+
+	var _SvgArrows = __webpack_require__(232);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	var propTypes = {
+	  title: _react.PropTypes.string.isRequired, // e.g. "Top Left"
+	  expanded: _react.PropTypes.bool.isRequired,
+	  location: _react.PropTypes.object.isRequired
+	};
+
+	var arrows = {
+	  left: _SvgArrows.LeftArrow,
+	  right: _SvgArrows.RightArrow,
+	  top: _SvgArrows.TopArrow,
+	  bottom: _SvgArrows.BottomArrow,
+	  topLeft: _SvgArrows.TopLeftArrow,
+	  topRight: _SvgArrows.TopRightArrow,
+	  bottomRight: _SvgArrows.BottomRightArrow,
+	  bottomLeft: _SvgArrows.BottomLeftArrow
+	};
+
+	function Corner(_ref) {
+	  var title = _ref.title;
+	  var expanded = _ref.expanded;
+	  var location = _ref.location;
+
+	  var id = title.toLowerCase().replace(/ /g, '-');
+	  var size = expanded ? 100 : 25;
+
+	  function arrowOrder() {
+	    var _id$split = id.split('-');
+
+	    var _id$split2 = _slicedToArray(_id$split, 2);
+
+	    var row = _id$split2[0];
+	    var col = _id$split2[1];
+
+	    var oppRow = row !== 'top' ? 'top' : 'bottom';
+	    var oppCol = col !== 'left' ? 'left' : 'right';
+	    return [[row + '-' + oppCol, arrows[oppCol]], [oppRow + '-' + col, arrows[oppRow]], [oppRow + '-' + oppCol, arrows['' + oppRow + oppCol[0].toUpperCase() + oppCol.slice(1)]]];
+	  }
+
+	  function getArrows() {
+	    return arrowOrder().map(function (link, i) {
+	      var Arrow = link[1];
+	      return _react2.default.createElement(
+	        _reactRouter.Link,
+	        {
+	          key: i,
+	          to: location.pathname + '#' + link[0],
+	          style: { width: '21px', display: 'block', margin: 'auto', padding: '5px 0' }
+	        },
+	        _react2.default.createElement(Arrow, { style: { fill: 'green', display: 'block', margin: 'auto' } })
+	      );
+	    });
+	  }
+
+	  return _react2.default.createElement(
+	    'div',
+	    { id: id, style: { height: size + 'vh', width: size + 'vw' } },
+	    _react2.default.createElement(
+	      'div',
+	      null,
+	      _react2.default.createElement(
+	        'h2',
+	        null,
+	        title
+	      ),
+	      getArrows()
+	    )
+	  );
+	}
+
+	Corner.propTypes = propTypes;
+
+	exports.default = Corner;
+
+/***/ },
+/* 234 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -26468,7 +26597,7 @@
 	exports.default = FourCornerScroll;
 
 /***/ },
-/* 234 */
+/* 235 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
