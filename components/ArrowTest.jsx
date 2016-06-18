@@ -1,4 +1,8 @@
 import React from 'react';
+import {
+  LeftArrow, RightArrow, TopArrow, BottomArrow,
+  TopLeftArrow, TopRightArrow, BottomLeftArrow, BottomRightArrow,
+} from './SvgArrows';
 
 function ArrowTest() {
   const unicodeArrows = {
@@ -29,16 +33,6 @@ function ArrowTest() {
       <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 300 900">
         <path d="M183.418 0v667.404H300L150 900 0 667.404h116.582V0h66.836z" />
       </svg>,
-    topRight:
-      <svg
-        xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 660.026 660.026"
-        style={{ margin: 'auto', display: 'block' }}
-      >
-        <path
-          d="M0 612.766L471.926 140.84 389.49 58.404 660.026 0l-58.404
-          270.536-82.436-82.436L47.26 660.026 0 612.766z"
-        />
-      </svg>,
     topLeft:
       <svg
         xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 660.026 660.026"
@@ -49,14 +43,14 @@ function ArrowTest() {
           58.404L188.1 140.84l471.926 471.926-47.26 47.26z"
         />
       </svg>,
-    bottomRight:
+    topRight:
       <svg
         xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 660.026 660.026"
         style={{ margin: 'auto', display: 'block' }}
       >
         <path
-          d="M47.26 0l471.926 471.926 82.436-82.436 58.404
-          270.536-270.536-58.404 82.436-82.436L0 47.26 47.26 0z"
+          d="M0 612.766L471.926 140.84 389.49 58.404 660.026 0l-58.404
+          270.536-82.436-82.436L47.26 660.026 0 612.766z"
         />
       </svg>,
     bottomLeft:
@@ -67,6 +61,16 @@ function ArrowTest() {
         <path
           d="M660.026 47.26L188.1 519.186l82.436 82.436L0 660.026 58.404
           389.49l82.436 82.436L612.766 0l47.26 47.26z"
+        />
+      </svg>,
+    bottomRight:
+      <svg
+        xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 660.026 660.026"
+        style={{ margin: 'auto', display: 'block' }}
+      >
+        <path
+          d="M47.26 0l471.926 471.926 82.436-82.436 58.404
+          270.536-270.536-58.404 82.436-82.436L0 47.26 47.26 0z"
         />
       </svg>,
   };
@@ -84,6 +88,20 @@ function ArrowTest() {
           {svgArrows[key]}
         </div>
       ))}
+      <LeftArrow
+        width="20" height="20"
+        style={{ display: 'block', margin: 'auto' }}
+        onClick={() => alert('You clicked left arrow')}
+        className="go-left-test-class"
+        title="I am Left Arrow"
+      />
+      <RightArrow style={{ display: 'block', margin: 'auto' }} />
+      <TopArrow style={{ display: 'block', margin: 'auto' }} />
+      <BottomArrow style={{ display: 'block', margin: 'auto' }} />
+      <TopLeftArrow style={{ display: 'block', margin: 'auto' }} />
+      <TopRightArrow style={{ display: 'block', margin: 'auto' }} />
+      <BottomLeftArrow style={{ display: 'block', margin: 'auto' }} />
+      <BottomRightArrow style={{ display: 'block', margin: 'auto' }} />
     </div>
   );
 }

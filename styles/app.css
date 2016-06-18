@@ -2,3 +2,7 @@ body {
   font-family: helvetica neue, helvetica, sans-serif;
   font-weight: 300;
 }
+
+.left-arrow {
+  fill: green;
+}
