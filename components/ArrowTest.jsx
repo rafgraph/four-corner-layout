@@ -88,8 +88,17 @@ function ArrowTest() {
           {svgArrows[key]}
         </div>
       ))}
+
+      <LeftArrow />
+      <RightArrow />
+      <TopArrow />
+      <BottomArrow />
+      <TopLeftArrow />
+      <TopRightArrow />
+      <BottomLeftArrow />
+      <BottomRightArrow />
+
       <LeftArrow
-        width="20" height="20"
         style={{ display: 'block', margin: 'auto' }}
         onClick={() => alert('You clicked left arrow')}
         className="go-left-test-class"
