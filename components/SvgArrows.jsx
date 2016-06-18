@@ -3,26 +3,35 @@ import React, { PropTypes } from 'react';
 const propTypes = {
   width: PropTypes.string,
   height: PropTypes.string,
+  scale: PropTypes.number,
   title: PropTypes.string,
   className: PropTypes.string,
 };
 
-const defaultPropsPerpendicularArrow = {
-  width: '20',
-  height: '20',
+const defaultPropsVerticalArrow = {
+  height: '21',
+  width: '7',
+  scale: 1,
+};
+
+const defaultPropsHorizontalArrow = {
+  width: '21',
+  height: '7',
+  scale: 1,
 };
 
 const defaultPropsDiagonalArrow = {
   width: '15',
   height: '15',
+  scale: 1,
 };
 
-function LeftArrow({ width, height, className, title = 'Left Arrow', ...other }) {
+function LeftArrow({ width, height, scale, className, title = 'Left Arrow', ...other }) {
   return (
     <svg
       {...other}
       className={`arrow left-arrow${className ? ` ${className}` : ''}`}
-      xmlns="http://www.w3.org/2000/svg" width={width} height={height} viewBox="0 0 900 300"
+      xmlns="http://www.w3.org/2000/svg" width={width * scale} height={height * scale} viewBox="0 0 900 300"
       aria-label={title}
     >
       <title>{title}</title>
@@ -31,12 +40,12 @@ function LeftArrow({ width, height, className, title = 'Left Arrow', ...other })
   );
 }
 
-function RightArrow({ width, height, className, title = 'Right Arrow', ...other }) {
+function RightArrow({ width, height, scale, className, title = 'Right Arrow', ...other }) {
   return (
     <svg
       {...other}
       className={`arrow right-arrow${className ? ` ${className}` : ''}`}
-      xmlns="http://www.w3.org/2000/svg" width={width} height={height} viewBox="0 0 900 300"
+      xmlns="http://www.w3.org/2000/svg" width={width * scale} height={height * scale} viewBox="0 0 900 300"
       aria-label={title}
     >
       <title>{title}</title>
@@ -45,12 +54,12 @@ function RightArrow({ width, height, className, title = 'Right Arrow', ...other 
   );
 }
 
-function TopArrow({ width, height, className, title = 'Top Arrow', ...other }) {
+function TopArrow({ width, height, scale, className, title = 'Top Arrow', ...other }) {
   return (
     <svg
       {...other}
       className={`arrow top-arrow${className ? ` ${className}` : ''}`}
-      xmlns="http://www.w3.org/2000/svg" width={width} height={height} viewBox="0 0 300 900"
+      xmlns="http://www.w3.org/2000/svg" width={width * scale} height={height * scale} viewBox="0 0 300 900"
       aria-label={title}
     >
       <title>{title}</title>
@@ -59,12 +68,12 @@ function TopArrow({ width, height, className, title = 'Top Arrow', ...other }) {
   );
 }
 
-function BottomArrow({ width, height, className, title = 'Bottom Arrow', ...other }) {
+function BottomArrow({ width, height, scale, className, title = 'Bottom Arrow', ...other }) {
   return (
     <svg
       {...other}
       className={`arrow bottom-arrow${className ? ` ${className}` : ''}`}
-      xmlns="http://www.w3.org/2000/svg" width={width} height={height} viewBox="0 0 300 900"
+      xmlns="http://www.w3.org/2000/svg" width={width * scale} height={height * scale} viewBox="0 0 300 900"
       aria-label={title}
     >
       <title>{title}</title>
@@ -73,12 +82,12 @@ function BottomArrow({ width, height, className, title = 'Bottom Arrow', ...othe
   );
 }
 
-function TopLeftArrow({ width, height, className, title = 'Top Left Arrow', ...other }) {
+function TopLeftArrow({ width, height, scale, className, title = 'Top Left Arrow', ...other }) {
   return (
     <svg
       {...other}
       className={`arrow top-left-arrow${className ? ` ${className}` : ''}`}
-      xmlns="http://www.w3.org/2000/svg" width={width} height={height} viewBox="0 0 660.026 660.026"
+      xmlns="http://www.w3.org/2000/svg" width={width * scale} height={height * scale} viewBox="0 0 660.026 660.026"
       aria-label={title}
     >
       <title>{title}</title>
@@ -90,12 +99,12 @@ function TopLeftArrow({ width, height, className, title = 'Top Left Arrow', ...o
   );
 }
 
-function TopRightArrow({ width, height, className, title = 'Top Right Arrow', ...other }) {
+function TopRightArrow({ width, height, scale, className, title = 'Top Right Arrow', ...other }) {
   return (
     <svg
       {...other}
       className={`arrow top-right-arrow${className ? ` ${className}` : ''}`}
-      xmlns="http://www.w3.org/2000/svg" width={width} height={height} viewBox="0 0 660.026 660.026"
+      xmlns="http://www.w3.org/2000/svg" width={width * scale} height={height * scale} viewBox="0 0 660.026 660.026"
       aria-label={title}
     >
       <title>{title}</title>
@@ -107,12 +116,14 @@ function TopRightArrow({ width, height, className, title = 'Top Right Arrow', ..
   );
 }
 
-function BottomLeftArrow({ width, height, className, title = 'Bottom Left Arrow', ...other }) {
+function BottomLeftArrow(
+  { width, height, scale, className, title = 'Bottom Left Arrow', ...other }
+) {
   return (
     <svg
       {...other}
       className={`arrow bottom-left-arrow${className ? ` ${className}` : ''}`}
-      xmlns="http://www.w3.org/2000/svg" width={width} height={height} viewBox="0 0 660.026 660.026"
+      xmlns="http://www.w3.org/2000/svg" width={width * scale} height={height * scale} viewBox="0 0 660.026 660.026"
       aria-label={title}
     >
       <title>{title}</title>
@@ -124,12 +135,14 @@ function BottomLeftArrow({ width, height, className, title = 'Bottom Left Arrow'
   );
 }
 
-function BottomRightArrow({ width, height, className, title = 'Bottom Right Arrow', ...other }) {
+function BottomRightArrow(
+  { width, height, scale, className, title = 'Bottom Right Arrow', ...other }
+) {
   return (
     <svg
       {...other}
       className={`arrow bottom-right-arrow${className ? ` ${className}` : ''}`}
-      xmlns="http://www.w3.org/2000/svg" width={width} height={height} viewBox="0 0 660.026 660.026"
+      xmlns="http://www.w3.org/2000/svg" width={width * scale} height={height * scale} viewBox="0 0 660.026 660.026"
       aria-label={title}
     >
       <title>{title}</title>
@@ -143,13 +156,13 @@ function BottomRightArrow({ width, height, className, title = 'Bottom Right Arro
 
 
 LeftArrow.propTypes = propTypes;
-LeftArrow.defaultProps = defaultPropsPerpendicularArrow;
+LeftArrow.defaultProps = defaultPropsHorizontalArrow;
 RightArrow.propTypes = propTypes;
-RightArrow.defaultProps = defaultPropsPerpendicularArrow;
+RightArrow.defaultProps = defaultPropsHorizontalArrow;
 TopArrow.propTypes = propTypes;
-TopArrow.defaultProps = defaultPropsPerpendicularArrow;
+TopArrow.defaultProps = defaultPropsVerticalArrow;
 BottomArrow.propTypes = propTypes;
-BottomArrow.defaultProps = defaultPropsPerpendicularArrow;
+BottomArrow.defaultProps = defaultPropsVerticalArrow;
 TopLeftArrow.propTypes = propTypes;
 TopLeftArrow.defaultProps = defaultPropsDiagonalArrow;
 TopRightArrow.propTypes = propTypes;
