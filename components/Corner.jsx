@@ -7,8 +7,16 @@ import {
 
 const propTypes = {
   title: PropTypes.string.isRequired, // e.g. "Top Left"
+  expandable: PropTypes.bool.isRequired,
   expanded: PropTypes.bool.isRequired,
+  allCB: PropTypes.func,
+  expandCB: PropTypes.func,
   location: PropTypes.object.isRequired,
+};
+
+const defaultProps = {
+  allCB: () => {},
+  expandCB: () => {},
 };
 
 const arrows = {
@@ -22,9 +30,9 @@ const arrows = {
   bottomLeft: BottomLeftArrow,
 };
 
-function Corner({ title, expanded, location }) {
+function Corner({ title, expandable, expanded, allCB, expandCB, location }) {
   const id = title.toLowerCase().replace(/ /g, '-');
-  const size = expanded ? 100 : 25;
+  const size = expanded ? 100 : 50;
 
   function arrowOrder() {
     const [row, col] = id.split('-');
@@ -55,13 +63,19 @@ function Corner({ title, expanded, location }) {
   return (
     <div id={id} style={{ height: `${size}vh`, width: `${size}vw` }}>
       <div>
-        <h2>{title}</h2>
-        {getArrows()}
+        <h2><Link to={`${location.pathname}#${id}`} onClick={expandCB}>
+          {title}
+        </Link></h2>
+        {(expandable && expanded) &&
+          <Link to={location.pathname} onClick={allCB} style={{ display: 'block' }}>All</Link>
+        }
+        {expanded && getArrows()}
       </div>
     </div>
   );
 }
 
 Corner.propTypes = propTypes;
+Corner.defaultProps = defaultProps;
 
 export default Corner;

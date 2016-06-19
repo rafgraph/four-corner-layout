@@ -22,7 +22,12 @@ function Home() {
       <Link to="/four-corner-scroll#tr">link four corner scroll top right</Link>
       <ArrowTest />
       <h2>corner:</h2>
-      <Corner title="Top Left" location={{ pathname: '/' }} expanded />
+      <Corner
+        title="Top Left" location={{ pathname: '/' }}
+        expandable expanded
+        allCB={() => console.log('click all')}
+        expandCB={() => console.log('click title')}
+      />
     </div>
   );
 }
