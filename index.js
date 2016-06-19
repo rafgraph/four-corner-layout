@@ -1,6 +1,6 @@
 import React from 'react';
 import { render } from 'react-dom';
-import { Router, Route, IndexRoute, browserHistory} from 'react-router';
+import { Router, Route, IndexRoute, browserHistory } from 'react-router';
 
 import App from './components/App';
 import Home from './components/Home';
@@ -9,10 +9,10 @@ import FourCornerExpand from './components/FourCornerExpand';
 
 
 const routes = (
-  <Route path='/' component={App} >
+  <Route path="/" component={App} >
     <IndexRoute component={Home} />
-    <Route path='four-corner-scroll' component={FourCornerScroll} />
-    <Route path='four-corner-expand' component={FourCornerExpand} />
+    <Route path="four-corner-scroll" component={FourCornerScroll} />
+    <Route path="four-corner-expand" component={FourCornerExpand} />
   </Route>
 );
 
