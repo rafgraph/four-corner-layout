@@ -15,12 +15,23 @@ body {
   font-weight: 300;
 }
 
+/*links*/
 a {
   touch-action: manipulation;
   -ms-touch-action: manipulation;
 }
 
-a:hover {
-  fill: green;
-  color: green;
+a:hover, a:active {
+  color: rgb(0, 144, 0);
+  fill: rgb(0, 144, 0);
+}
+
+.current-input-touch a:hover {
+  color: black;
+  fill: black;
+}
+
+.current-input-touch a:active {
+  color: rgb(0, 144, 0);
+  fill: rgb(0, 144, 0);
 }
