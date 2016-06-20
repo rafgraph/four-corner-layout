@@ -8,7 +8,7 @@ const propTypes = {
 
 function FourCornerScroll({ location }) {
   return (
-    <div style={{ height: '200vh', width: '200vw' }}>
+    <div style={{ height: '200%', width: '200%' }}>
       <Corner
         title="Top Left" expandable={false} expanded location={location}
         style={{ backgroundColor: '#D0D0D0' }}

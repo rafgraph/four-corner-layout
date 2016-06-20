@@ -26,10 +26,13 @@ body {
   -ms-text-size-adjust: none;
 }
 
+/*set height to 100% to pass down window height (without scroll bars) to react app*/
+html, body, #root {
+  height: 100%;
+}
+
 /*root div in index.html*/
 #root {
-  min-height: 100vh;
-  min-width: 100vw;
   background-color: #F0F0F0;
 }
 

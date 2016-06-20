@@ -21,8 +21,8 @@ class FourCornerExpand extends React.Component {
   }
 
   render() {
-    const height = this.state.expanded ? '200vh' : '100vh';
-    const width = this.state.expanded ? '200vw' : '100vw';
+    const height = this.state.expanded ? '200%' : '100%';
+    const width = this.state.expanded ? '200%' : '100%';
 
     return (
       <div style={{ height, width }}>

@@ -34,7 +34,6 @@ const arrows = {
 
 function Corner({ title, expandable, expanded, allCB, expandCB, location, style }) {
   const id = title.toLowerCase().replace(/ /g, '-');
-  const size = expanded ? 100 : 50;
 
   function arrowOrder() {
     const [row, col] = id.split('-');
@@ -66,7 +65,7 @@ function Corner({ title, expandable, expanded, allCB, expandCB, location, style 
     <div
       id={id}
       style={Object.assign(style,
-        { float: id.split('-')[1], height: `${size}vh`, width: `${size}vw` }
+        { float: id.split('-')[1], height: `50%`, width: `50%` }
       )}
     >
       {expanded &&

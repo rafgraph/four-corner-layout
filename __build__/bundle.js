@@ -64,11 +64,11 @@
 
 	var _Home2 = _interopRequireDefault(_Home);
 
-	var _FourCornerScroll = __webpack_require__(235);
+	var _FourCornerScroll = __webpack_require__(232);
 
 	var _FourCornerScroll2 = _interopRequireDefault(_FourCornerScroll);
 
-	var _FourCornerExpand = __webpack_require__(236);
+	var _FourCornerExpand = __webpack_require__(235);
 
 	var _FourCornerExpand2 = _interopRequireDefault(_FourCornerExpand);
 
@@ -26089,14 +26089,6 @@
 
 	var _reactRouter = __webpack_require__(168);
 
-	var _ArrowTest = __webpack_require__(232);
-
-	var _ArrowTest2 = _interopRequireDefault(_ArrowTest);
-
-	var _Corner = __webpack_require__(234);
-
-	var _Corner2 = _interopRequireDefault(_Corner);
-
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	function Home() {
@@ -26123,7 +26115,7 @@
 	        null,
 	        _react2.default.createElement(
 	          _reactRouter.Link,
-	          { to: '/four-corner-scroll' },
+	          { to: '/four-corner-scroll', className: 'hp-link' },
 	          'Four corner scroll'
 	        )
 	      ),
@@ -26132,37 +26124,39 @@
 	        null,
 	        _react2.default.createElement(
 	          _reactRouter.Link,
-	          { to: '/four-corner-expand' },
+	          { to: '/four-corner-expand', className: 'hp-link' },
 	          'Four corner expand'
 	        )
 	      )
 	    ),
 	    _react2.default.createElement(
-	      'h2',
+	      'div',
 	      null,
-	      'TESTs'
-	    ),
-	    _react2.default.createElement(
-	      _reactRouter.Link,
-	      { to: '/four-corner-scroll#tr' },
-	      'link four corner scroll top right'
-	    ),
-	    _react2.default.createElement(_ArrowTest2.default, null),
-	    _react2.default.createElement(
-	      'h2',
-	      null,
-	      'corner:'
-	    ),
-	    _react2.default.createElement(_Corner2.default, {
-	      title: 'Top Left', location: { pathname: '/' },
-	      expandable: true, expanded: true,
-	      allCB: function allCB() {
-	        return console.log('click all');
-	      },
-	      expandCB: function expandCB() {
-	        return console.log('click title');
-	      }
-	    })
+	      _react2.default.createElement(
+	        'a',
+	        {
+	          href: 'http://www.rafrex.com', style: { display: 'block' }
+	        },
+	        'concept and code by ',
+	        _react2.default.createElement(
+	          'span',
+	          { className: 'hp-link' },
+	          'Rafael Pedicini'
+	        )
+	      ),
+	      _react2.default.createElement(
+	        'a',
+	        {
+	          href: 'http://github.com/rafrex/four-corner-layout', style: { display: 'block' }
+	        },
+	        _react2.default.createElement(
+	          'span',
+	          { className: 'hp-link' },
+	          'code'
+	        ),
+	        ' available on github'
+	      )
+	    )
 	  );
 	}
 
@@ -26182,137 +26176,186 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _SvgArrows = __webpack_require__(233);
+	var _Corner = __webpack_require__(233);
+
+	var _Corner2 = _interopRequireDefault(_Corner);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	function ArrowTest() {
-	  var unicodeArrows = {
-	    left: '←',
-	    top: '↑',
-	    right: '→',
-	    bottom: '↓',
-	    topLeft: '↖',
-	    topRight: '↗',
-	    bottomRight: '↘',
-	    bottomLeft: '↙'
-	  };
+	var propTypes = {
+	  location: _react.PropTypes.object.isRequired
+	};
 
-	  var svgArrows = {
-	    left: _react2.default.createElement(
-	      'svg',
-	      { xmlns: 'http://www.w3.org/2000/svg', width: '20', height: '20', viewBox: '0 0 900 300' },
-	      _react2.default.createElement('path', { d: 'M900 183.418H232.596V300L0 150 232.596 0v116.582H900v66.836z' })
-	    ),
-	    right: _react2.default.createElement(
-	      'svg',
-	      { xmlns: 'http://www.w3.org/2000/svg', width: '20', height: '20', viewBox: '0 0 900 300' },
-	      _react2.default.createElement('path', { d: 'M0 116.582h667.404V0L900 150 667.404 300V183.418H0v-66.836z' })
-	    ),
-	    top: _react2.default.createElement(
-	      'svg',
-	      { xmlns: 'http://www.w3.org/2000/svg', width: '20', height: '20', viewBox: '0 0 300 900' },
-	      _react2.default.createElement('path', { d: 'M116.582 900V232.596H0L150 0l150 232.596H183.418V900h-66.836z' })
-	    ),
-	    bottom: _react2.default.createElement(
-	      'svg',
-	      { xmlns: 'http://www.w3.org/2000/svg', width: '20', height: '20', viewBox: '0 0 300 900' },
-	      _react2.default.createElement('path', { d: 'M183.418 0v667.404H300L150 900 0 667.404h116.582V0h66.836z' })
-	    ),
-	    topLeft: _react2.default.createElement(
-	      'svg',
-	      {
-	        xmlns: 'http://www.w3.org/2000/svg', width: '15', height: '15', viewBox: '0 0 660.026 660.026',
-	        style: { margin: 'auto', display: 'block' }
-	      },
-	      _react2.default.createElement('path', {
-	        d: 'M612.766 660.026L140.84 188.1l-82.436 82.436L0 0l270.536 58.404L188.1 140.84l471.926 471.926-47.26 47.26z'
-	      })
-	    ),
-	    topRight: _react2.default.createElement(
-	      'svg',
-	      {
-	        xmlns: 'http://www.w3.org/2000/svg', width: '15', height: '15', viewBox: '0 0 660.026 660.026',
-	        style: { margin: 'auto', display: 'block' }
-	      },
-	      _react2.default.createElement('path', {
-	        d: 'M0 612.766L471.926 140.84 389.49 58.404 660.026 0l-58.404 270.536-82.436-82.436L47.26 660.026 0 612.766z'
-	      })
-	    ),
-	    bottomLeft: _react2.default.createElement(
-	      'svg',
-	      {
-	        xmlns: 'http://www.w3.org/2000/svg', width: '15', height: '15', viewBox: '0 0 660.026 660.026',
-	        style: { margin: 'auto', display: 'block' }
-	      },
-	      _react2.default.createElement('path', {
-	        d: 'M660.026 47.26L188.1 519.186l82.436 82.436L0 660.026 58.404 389.49l82.436 82.436L612.766 0l47.26 47.26z'
-	      })
-	    ),
-	    bottomRight: _react2.default.createElement(
-	      'svg',
-	      {
-	        xmlns: 'http://www.w3.org/2000/svg', width: '15', height: '15', viewBox: '0 0 660.026 660.026',
-	        style: { margin: 'auto', display: 'block' }
-	      },
-	      _react2.default.createElement('path', {
-	        d: 'M47.26 0l471.926 471.926 82.436-82.436 58.404 270.536-270.536-58.404 82.436-82.436L0 47.26 47.26 0z'
-	      })
-	    )
-	  };
+	function FourCornerScroll(_ref) {
+	  var location = _ref.location;
 
 	  return _react2.default.createElement(
 	    'div',
-	    null,
-	    _react2.default.createElement(
-	      'h3',
-	      null,
-	      'Arrow Test'
-	    ),
-	    Object.keys(unicodeArrows).map(function (key) {
-	      return _react2.default.createElement(
-	        'div',
-	        { key: key },
-	        unicodeArrows[key]
-	      );
+	    { style: { height: '200%', width: '200%' } },
+	    _react2.default.createElement(_Corner2.default, {
+	      title: 'Top Left', expandable: false, expanded: true, location: location,
+	      style: { backgroundColor: '#D0D0D0' }
 	    }),
-	    Object.keys(svgArrows).map(function (key) {
-	      return _react2.default.createElement(
-	        'div',
-	        { key: key, style: { width: '20px', height: '20px', margin: '10px 0' } },
-	        svgArrows[key]
-	      );
+	    _react2.default.createElement(_Corner2.default, {
+	      title: 'Top Right', expandable: false, expanded: true, location: location,
+	      style: { backgroundColor: '#C0C0C0' }
 	    }),
-	    _react2.default.createElement(_SvgArrows.LeftArrow, null),
-	    _react2.default.createElement(_SvgArrows.RightArrow, null),
-	    _react2.default.createElement(_SvgArrows.TopArrow, null),
-	    _react2.default.createElement(_SvgArrows.BottomArrow, null),
-	    _react2.default.createElement(_SvgArrows.TopLeftArrow, null),
-	    _react2.default.createElement(_SvgArrows.TopRightArrow, null),
-	    _react2.default.createElement(_SvgArrows.BottomLeftArrow, null),
-	    _react2.default.createElement(_SvgArrows.BottomRightArrow, null),
-	    _react2.default.createElement(_SvgArrows.LeftArrow, {
-	      style: { display: 'block', margin: 'auto' },
-	      onClick: function onClick() {
-	        return alert('You clicked left arrow');
-	      },
-	      className: 'go-left-test-class',
-	      title: 'I am Left Arrow'
+	    _react2.default.createElement(_Corner2.default, {
+	      title: 'Bottom Left', expandable: false, expanded: true, location: location,
+	      style: { backgroundColor: '#B0B0B0' }
 	    }),
-	    _react2.default.createElement(_SvgArrows.RightArrow, { style: { display: 'block', margin: 'auto' } }),
-	    _react2.default.createElement(_SvgArrows.TopArrow, { style: { display: 'block', margin: 'auto' } }),
-	    _react2.default.createElement(_SvgArrows.BottomArrow, { style: { display: 'block', margin: 'auto' } }),
-	    _react2.default.createElement(_SvgArrows.TopLeftArrow, { style: { display: 'block', margin: 'auto' } }),
-	    _react2.default.createElement(_SvgArrows.TopRightArrow, { style: { display: 'block', margin: 'auto' } }),
-	    _react2.default.createElement(_SvgArrows.BottomLeftArrow, { style: { display: 'block', margin: 'auto' } }),
-	    _react2.default.createElement(_SvgArrows.BottomRightArrow, { style: { display: 'block', margin: 'auto' } })
+	    _react2.default.createElement(_Corner2.default, {
+	      title: 'Bottom Right', expandable: false, expanded: true, location: location,
+	      style: { backgroundColor: '#A0A0A0' }
+	    })
 	  );
 	}
 
-	exports.default = ArrowTest;
+	FourCornerScroll.propTypes = propTypes;
+
+	exports.default = FourCornerScroll;
 
 /***/ },
 /* 233 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+	var _slicedToArray = function () { function sliceIterator(arr, i) { var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"]) _i["return"](); } finally { if (_d) throw _e; } } return _arr; } return function (arr, i) { if (Array.isArray(arr)) { return arr; } else if (Symbol.iterator in Object(arr)) { return sliceIterator(arr, i); } else { throw new TypeError("Invalid attempt to destructure non-iterable instance"); } }; }();
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _reactRouter = __webpack_require__(168);
+
+	var _SvgArrows = __webpack_require__(234);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	var propTypes = {
+	  title: _react.PropTypes.string.isRequired, // e.g. "Top Left"
+	  expandable: _react.PropTypes.bool.isRequired,
+	  expanded: _react.PropTypes.bool.isRequired,
+	  allCB: _react.PropTypes.func,
+	  expandCB: _react.PropTypes.func,
+	  location: _react.PropTypes.object.isRequired,
+	  style: _react.PropTypes.object
+	};
+
+	var defaultProps = {
+	  allCB: function allCB() {},
+	  expandCB: function expandCB() {},
+	  style: {}
+	};
+
+	var arrows = {
+	  left: _SvgArrows.LeftArrow,
+	  right: _SvgArrows.RightArrow,
+	  top: _SvgArrows.TopArrow,
+	  bottom: _SvgArrows.BottomArrow,
+	  topLeft: _SvgArrows.TopLeftArrow,
+	  topRight: _SvgArrows.TopRightArrow,
+	  bottomRight: _SvgArrows.BottomRightArrow,
+	  bottomLeft: _SvgArrows.BottomLeftArrow
+	};
+
+	function Corner(_ref) {
+	  var title = _ref.title;
+	  var expandable = _ref.expandable;
+	  var expanded = _ref.expanded;
+	  var allCB = _ref.allCB;
+	  var expandCB = _ref.expandCB;
+	  var location = _ref.location;
+	  var style = _ref.style;
+
+	  var id = title.toLowerCase().replace(/ /g, '-');
+
+	  function arrowOrder() {
+	    var _id$split = id.split('-');
+
+	    var _id$split2 = _slicedToArray(_id$split, 2);
+
+	    var row = _id$split2[0];
+	    var col = _id$split2[1];
+
+	    var oppRow = row !== 'top' ? 'top' : 'bottom';
+	    var oppCol = col !== 'left' ? 'left' : 'right';
+	    return [[row + '-' + oppCol, arrows[oppCol]], [oppRow + '-' + col, arrows[oppRow]], [oppRow + '-' + oppCol, arrows['' + oppRow + oppCol[0].toUpperCase() + oppCol.slice(1)]]];
+	  }
+
+	  function getArrows() {
+	    return arrowOrder().map(function (link, i) {
+	      var Arrow = link[1];
+	      return _react2.default.createElement(
+	        _reactRouter.Link,
+	        {
+	          key: i,
+	          to: location.pathname + '#' + link[0],
+	          style: { width: '21px', display: 'block', margin: 'auto', padding: '5px 0' }
+	        },
+	        _react2.default.createElement(Arrow, { style: { display: 'block', margin: 'auto' } })
+	      );
+	    });
+	  }
+
+	  return _react2.default.createElement(
+	    'div',
+	    {
+	      id: id,
+	      style: _extends(style, { float: id.split('-')[1], height: '50%', width: '50%' })
+	    },
+	    expanded && _react2.default.createElement(
+	      _reactRouter.Link,
+	      { to: '/', style: { display: 'block', position: 'absolute', margin: '5px 7px' } },
+	      'Home'
+	    ),
+	    _react2.default.createElement(
+	      'div',
+	      {
+	        style: {
+	          position: 'relative',
+	          top: '50%',
+	          transform: 'translate(0, -50%)',
+	          WebkitTransform: 'translate(0, -50%)',
+	          MozTransform: 'translate(0, -50%)',
+	          msTransform: 'translate(0, -50%)',
+	          textAlign: 'center',
+	          paddingBottom: '3vh'
+	        }
+	      },
+	      _react2.default.createElement(
+	        'h2',
+	        { style: { fontSize: '20px', marginBottom: '3px' } },
+	        _react2.default.createElement(
+	          _reactRouter.Link,
+	          { to: location.pathname + '#' + id, onClick: expandCB },
+	          title
+	        )
+	      ),
+	      expandable && expanded && _react2.default.createElement(
+	        _reactRouter.Link,
+	        { to: location.pathname, onClick: allCB, style: { display: 'block' } },
+	        'All'
+	      ),
+	      expanded && getArrows()
+	    )
+	  );
+	}
+
+	Corner.propTypes = propTypes;
+	Corner.defaultProps = defaultProps;
+
+	exports.default = Corner;
+
+/***/ },
+/* 234 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -26601,200 +26644,7 @@
 	exports.BottomRightArrow = BottomRightArrow;
 
 /***/ },
-/* 234 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-
-	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
-
-	var _slicedToArray = function () { function sliceIterator(arr, i) { var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"]) _i["return"](); } finally { if (_d) throw _e; } } return _arr; } return function (arr, i) { if (Array.isArray(arr)) { return arr; } else if (Symbol.iterator in Object(arr)) { return sliceIterator(arr, i); } else { throw new TypeError("Invalid attempt to destructure non-iterable instance"); } }; }();
-
-	var _react = __webpack_require__(1);
-
-	var _react2 = _interopRequireDefault(_react);
-
-	var _reactRouter = __webpack_require__(168);
-
-	var _SvgArrows = __webpack_require__(233);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	var propTypes = {
-	  title: _react.PropTypes.string.isRequired, // e.g. "Top Left"
-	  expandable: _react.PropTypes.bool.isRequired,
-	  expanded: _react.PropTypes.bool.isRequired,
-	  allCB: _react.PropTypes.func,
-	  expandCB: _react.PropTypes.func,
-	  location: _react.PropTypes.object.isRequired,
-	  style: _react.PropTypes.object
-	};
-
-	var defaultProps = {
-	  allCB: function allCB() {},
-	  expandCB: function expandCB() {},
-	  style: {}
-	};
-
-	var arrows = {
-	  left: _SvgArrows.LeftArrow,
-	  right: _SvgArrows.RightArrow,
-	  top: _SvgArrows.TopArrow,
-	  bottom: _SvgArrows.BottomArrow,
-	  topLeft: _SvgArrows.TopLeftArrow,
-	  topRight: _SvgArrows.TopRightArrow,
-	  bottomRight: _SvgArrows.BottomRightArrow,
-	  bottomLeft: _SvgArrows.BottomLeftArrow
-	};
-
-	function Corner(_ref) {
-	  var title = _ref.title;
-	  var expandable = _ref.expandable;
-	  var expanded = _ref.expanded;
-	  var allCB = _ref.allCB;
-	  var expandCB = _ref.expandCB;
-	  var location = _ref.location;
-	  var style = _ref.style;
-
-	  var id = title.toLowerCase().replace(/ /g, '-');
-	  var size = expanded ? 100 : 50;
-
-	  function arrowOrder() {
-	    var _id$split = id.split('-');
-
-	    var _id$split2 = _slicedToArray(_id$split, 2);
-
-	    var row = _id$split2[0];
-	    var col = _id$split2[1];
-
-	    var oppRow = row !== 'top' ? 'top' : 'bottom';
-	    var oppCol = col !== 'left' ? 'left' : 'right';
-	    return [[row + '-' + oppCol, arrows[oppCol]], [oppRow + '-' + col, arrows[oppRow]], [oppRow + '-' + oppCol, arrows['' + oppRow + oppCol[0].toUpperCase() + oppCol.slice(1)]]];
-	  }
-
-	  function getArrows() {
-	    return arrowOrder().map(function (link, i) {
-	      var Arrow = link[1];
-	      return _react2.default.createElement(
-	        _reactRouter.Link,
-	        {
-	          key: i,
-	          to: location.pathname + '#' + link[0],
-	          style: { width: '21px', display: 'block', margin: 'auto', padding: '5px 0' }
-	        },
-	        _react2.default.createElement(Arrow, { style: { display: 'block', margin: 'auto' } })
-	      );
-	    });
-	  }
-
-	  return _react2.default.createElement(
-	    'div',
-	    {
-	      id: id,
-	      style: _extends(style, { float: id.split('-')[1], height: size + 'vh', width: size + 'vw' })
-	    },
-	    expanded && _react2.default.createElement(
-	      _reactRouter.Link,
-	      { to: '/', style: { display: 'block', position: 'absolute', margin: '5px 7px' } },
-	      'Home'
-	    ),
-	    _react2.default.createElement(
-	      'div',
-	      {
-	        style: {
-	          position: 'relative',
-	          top: '50%',
-	          transform: 'translate(0, -50%)',
-	          WebkitTransform: 'translate(0, -50%)',
-	          MozTransform: 'translate(0, -50%)',
-	          msTransform: 'translate(0, -50%)',
-	          textAlign: 'center',
-	          paddingBottom: '3vh'
-	        }
-	      },
-	      _react2.default.createElement(
-	        'h2',
-	        { style: { fontSize: '20px', marginBottom: '3px' } },
-	        _react2.default.createElement(
-	          _reactRouter.Link,
-	          { to: location.pathname + '#' + id, onClick: expandCB },
-	          title
-	        )
-	      ),
-	      expandable && expanded && _react2.default.createElement(
-	        _reactRouter.Link,
-	        { to: location.pathname, onClick: allCB, style: { display: 'block' } },
-	        'All'
-	      ),
-	      expanded && getArrows()
-	    )
-	  );
-	}
-
-	Corner.propTypes = propTypes;
-	Corner.defaultProps = defaultProps;
-
-	exports.default = Corner;
-
-/***/ },
 /* 235 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-
-	var _react = __webpack_require__(1);
-
-	var _react2 = _interopRequireDefault(_react);
-
-	var _Corner = __webpack_require__(234);
-
-	var _Corner2 = _interopRequireDefault(_Corner);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	var propTypes = {
-	  location: _react.PropTypes.object.isRequired
-	};
-
-	function FourCornerScroll(_ref) {
-	  var location = _ref.location;
-
-	  return _react2.default.createElement(
-	    'div',
-	    { style: { height: '200vh', width: '200vw' } },
-	    _react2.default.createElement(_Corner2.default, {
-	      title: 'Top Left', expandable: false, expanded: true, location: location,
-	      style: { backgroundColor: '#D0D0D0' }
-	    }),
-	    _react2.default.createElement(_Corner2.default, {
-	      title: 'Top Right', expandable: false, expanded: true, location: location,
-	      style: { backgroundColor: '#C0C0C0' }
-	    }),
-	    _react2.default.createElement(_Corner2.default, {
-	      title: 'Bottom Left', expandable: false, expanded: true, location: location,
-	      style: { backgroundColor: '#B0B0B0' }
-	    }),
-	    _react2.default.createElement(_Corner2.default, {
-	      title: 'Bottom Right', expandable: false, expanded: true, location: location,
-	      style: { backgroundColor: '#A0A0A0' }
-	    })
-	  );
-	}
-
-	FourCornerScroll.propTypes = propTypes;
-
-	exports.default = FourCornerScroll;
-
-/***/ },
-/* 236 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -26811,7 +26661,7 @@
 
 	var _reactRouter = __webpack_require__(168);
 
-	var _Corner = __webpack_require__(234);
+	var _Corner = __webpack_require__(233);
 
 	var _Corner2 = _interopRequireDefault(_Corner);
 
@@ -26852,8 +26702,8 @@
 	  }, {
 	    key: 'render',
 	    value: function render() {
-	      var height = this.state.expanded ? '200vh' : '100vh';
-	      var width = this.state.expanded ? '200vw' : '100vw';
+	      var height = this.state.expanded ? '200%' : '100%';
+	      var width = this.state.expanded ? '200%' : '100%';
 
 	      return _react2.default.createElement(
 	        'div',
