@@ -12,11 +12,13 @@ const propTypes = {
   allCB: PropTypes.func,
   expandCB: PropTypes.func,
   location: PropTypes.object.isRequired,
+  style: PropTypes.object,
 };
 
 const defaultProps = {
   allCB: () => {},
   expandCB: () => {},
+  style: {},
 };
 
 const arrows = {
@@ -30,7 +32,7 @@ const arrows = {
   bottomLeft: BottomLeftArrow,
 };
 
-function Corner({ title, expandable, expanded, allCB, expandCB, location }) {
+function Corner({ title, expandable, expanded, allCB, expandCB, location, style }) {
   const id = title.toLowerCase().replace(/ /g, '-');
   const size = expanded ? 100 : 50;
 
@@ -54,18 +56,39 @@ function Corner({ title, expandable, expanded, allCB, expandCB, location }) {
           to={`${location.pathname}#${link[0]}`}
           style={{ width: '21px', display: 'block', margin: 'auto', padding: '5px 0' }}
         >
-          <Arrow style={{ fill: 'green', display: 'block', margin: 'auto' }} />
+          <Arrow style={{ display: 'block', margin: 'auto' }} />
         </Link>
       );
     });
   }
 
   return (
-    <div id={id} style={{ height: `${size}vh`, width: `${size}vw` }}>
-      <div>
-        <h2><Link to={`${location.pathname}#${id}`} onClick={expandCB}>
-          {title}
-        </Link></h2>
+    <div
+      id={id}
+      style={Object.assign(style,
+        { float: id.split('-')[1], height: `${size}vh`, width: `${size}vw` }
+      )}
+    >
+      {expanded &&
+        <Link to="/" style={{ display: 'block', position: 'absolute', margin: '5px 7px' }}>
+          Home
+        </Link>
+      }
+      <div
+        style={{
+          position: 'relative',
+          top: '50%',
+          transform: 'translate(0, -50%)',
+          WebkitTransform: 'translate(0, -50%)',
+          MozTransform: 'translate(0, -50%)',
+          msTransform: 'translate(0, -50%)',
+          textAlign: 'center',
+          paddingBottom: '3vh',
+        }}
+      >
+        <h2 style={{ fontSize: '20px', marginBottom: '3px' }}>
+          <Link to={`${location.pathname}#${id}`} onClick={expandCB}>{title}</Link>
+        </h2>
         {(expandable && expanded) &&
           <Link to={location.pathname} onClick={allCB} style={{ display: 'block' }}>All</Link>
         }
