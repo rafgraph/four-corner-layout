@@ -1,19 +1,34 @@
-import React from 'react';
-import { Link } from 'react-router';
+import React, { PropTypes } from 'react';
+import Corner from './Corner';
 
-function FourCornerScroll(props) {
+const propTypes = {
+  location: PropTypes.object.isRequired,
+};
 
+
+function FourCornerScroll({ location }) {
   return (
-    <div style={{height: '200vh', width: '200vw'}}>
-      <div id="tl" style={{height: '100vh', width: '100vw', float: 'left'}}>
-        <div>Top left</div>
-        <Link to={`/${props.route.path}#br`}>link to bottom right</Link>
-      </div>
-      <div id="tr" style={{height: '100vh', width: '100vw', float: 'right'}}>Top right</div>
-      <div id="bl" style={{height: '100vh', width: '100vw', float: 'left'}}>Bottom left</div>
-      <div id="br" style={{height: '100vh', width: '100vw', float: 'right'}}>Bottom right</div>
+    <div style={{ height: '200vh', width: '200vw' }}>
+      <Corner
+        title="Top Left" expandable={false} expanded location={location}
+        style={{ backgroundColor: '#D0D0D0' }}
+      />
+      <Corner
+        title="Top Right" expandable={false} expanded location={location}
+        style={{ backgroundColor: '#C0C0C0' }}
+      />
+      <Corner
+        title="Bottom Left" expandable={false} expanded location={location}
+        style={{ backgroundColor: '#B0B0B0' }}
+      />
+      <Corner
+        title="Bottom Right" expandable={false} expanded location={location}
+        style={{ backgroundColor: '#A0A0A0' }}
+      />
     </div>
-  )
+  );
 }
+
+FourCornerScroll.propTypes = propTypes;
 
 export default FourCornerScroll;

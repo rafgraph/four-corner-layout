@@ -25958,7 +25958,7 @@
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	function Home() {
-	  var description = 'Four presentation pages on a single web page, each presentation page' + 'is immersive and dynamically resizes to the size of the' + 'window — inspired by print media: a newspaper’s fold combined' + 'with a magazine’s left and right pages.';
+	  var description = 'Four presentation pages on a single web page, each presentation page\n    is immersive and dynamically resizes to the size of the\n    window.';
 
 	  return _react2.default.createElement(
 	    'div',
@@ -25994,6 +25994,11 @@
 	          'Four corner expand'
 	        )
 	      )
+	    ),
+	    _react2.default.createElement(
+	      'h2',
+	      null,
+	      'TESTs'
 	    ),
 	    _react2.default.createElement(
 	      _reactRouter.Link,
@@ -26463,6 +26468,8 @@
 	  value: true
 	});
 
+	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
 	var _slicedToArray = function () { function sliceIterator(arr, i) { var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"]) _i["return"](); } finally { if (_d) throw _e; } } return _arr; } return function (arr, i) { if (Array.isArray(arr)) { return arr; } else if (Symbol.iterator in Object(arr)) { return sliceIterator(arr, i); } else { throw new TypeError("Invalid attempt to destructure non-iterable instance"); } }; }();
 
 	var _react = __webpack_require__(1);
@@ -26481,12 +26488,14 @@
 	  expanded: _react.PropTypes.bool.isRequired,
 	  allCB: _react.PropTypes.func,
 	  expandCB: _react.PropTypes.func,
-	  location: _react.PropTypes.object.isRequired
+	  location: _react.PropTypes.object.isRequired,
+	  style: _react.PropTypes.object
 	};
 
 	var defaultProps = {
 	  allCB: function allCB() {},
-	  expandCB: function expandCB() {}
+	  expandCB: function expandCB() {},
+	  style: {}
 	};
 
 	var arrows = {
@@ -26507,6 +26516,7 @@
 	  var allCB = _ref.allCB;
 	  var expandCB = _ref.expandCB;
 	  var location = _ref.location;
+	  var style = _ref.style;
 
 	  var id = title.toLowerCase().replace(/ /g, '-');
 	  var size = expanded ? 100 : 50;
@@ -26534,20 +26544,39 @@
 	          to: location.pathname + '#' + link[0],
 	          style: { width: '21px', display: 'block', margin: 'auto', padding: '5px 0' }
 	        },
-	        _react2.default.createElement(Arrow, { style: { fill: 'green', display: 'block', margin: 'auto' } })
+	        _react2.default.createElement(Arrow, { style: { display: 'block', margin: 'auto' } })
 	      );
 	    });
 	  }
 
 	  return _react2.default.createElement(
 	    'div',
-	    { id: id, style: { height: size + 'vh', width: size + 'vw' } },
+	    {
+	      id: id,
+	      style: _extends(style, { float: id.split('-')[1], height: size + 'vh', width: size + 'vw' })
+	    },
+	    expanded && _react2.default.createElement(
+	      _reactRouter.Link,
+	      { to: '/', style: { display: 'block', position: 'absolute', margin: '5px 7px' } },
+	      'Home'
+	    ),
 	    _react2.default.createElement(
 	      'div',
-	      null,
+	      {
+	        style: {
+	          position: 'relative',
+	          top: '50%',
+	          transform: 'translate(0, -50%)',
+	          WebkitTransform: 'translate(0, -50%)',
+	          MozTransform: 'translate(0, -50%)',
+	          msTransform: 'translate(0, -50%)',
+	          textAlign: 'center',
+	          paddingBottom: '3vh'
+	        }
+	      },
 	      _react2.default.createElement(
 	        'h2',
-	        null,
+	        { style: { fontSize: '20px', marginBottom: '3px' } },
 	        _react2.default.createElement(
 	          _reactRouter.Link,
 	          { to: location.pathname + '#' + id, onClick: expandCB },
@@ -26583,46 +26612,42 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _reactRouter = __webpack_require__(168);
+	var _Corner = __webpack_require__(233);
+
+	var _Corner2 = _interopRequireDefault(_Corner);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	function FourCornerScroll(props) {
+	var propTypes = {
+	  location: _react.PropTypes.object.isRequired
+	};
+
+	function FourCornerScroll(_ref) {
+	  var location = _ref.location;
 
 	  return _react2.default.createElement(
 	    'div',
 	    { style: { height: '200vh', width: '200vw' } },
-	    _react2.default.createElement(
-	      'div',
-	      { id: 'tl', style: { height: '100vh', width: '100vw', float: 'left' } },
-	      _react2.default.createElement(
-	        'div',
-	        null,
-	        'Top left'
-	      ),
-	      _react2.default.createElement(
-	        _reactRouter.Link,
-	        { to: '/' + props.route.path + '#br' },
-	        'link to bottom right'
-	      )
-	    ),
-	    _react2.default.createElement(
-	      'div',
-	      { id: 'tr', style: { height: '100vh', width: '100vw', float: 'right' } },
-	      'Top right'
-	    ),
-	    _react2.default.createElement(
-	      'div',
-	      { id: 'bl', style: { height: '100vh', width: '100vw', float: 'left' } },
-	      'Bottom left'
-	    ),
-	    _react2.default.createElement(
-	      'div',
-	      { id: 'br', style: { height: '100vh', width: '100vw', float: 'right' } },
-	      'Bottom right'
-	    )
+	    _react2.default.createElement(_Corner2.default, {
+	      title: 'Top Left', expandable: false, expanded: true, location: location,
+	      style: { backgroundColor: '#D0D0D0' }
+	    }),
+	    _react2.default.createElement(_Corner2.default, {
+	      title: 'Top Right', expandable: false, expanded: true, location: location,
+	      style: { backgroundColor: '#C0C0C0' }
+	    }),
+	    _react2.default.createElement(_Corner2.default, {
+	      title: 'Bottom Left', expandable: false, expanded: true, location: location,
+	      style: { backgroundColor: '#B0B0B0' }
+	    }),
+	    _react2.default.createElement(_Corner2.default, {
+	      title: 'Bottom Right', expandable: false, expanded: true, location: location,
+	      style: { backgroundColor: '#A0A0A0' }
+	    })
 	  );
 	}
+
+	FourCornerScroll.propTypes = propTypes;
 
 	exports.default = FourCornerScroll;
 
