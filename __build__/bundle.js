@@ -26803,19 +26803,92 @@
 	  value: true
 	});
 
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
 	var _react = __webpack_require__(1);
 
 	var _react2 = _interopRequireDefault(_react);
 
+	var _reactRouter = __webpack_require__(168);
+
+	var _Corner = __webpack_require__(234);
+
+	var _Corner2 = _interopRequireDefault(_Corner);
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	function FourCornerExpand() {
-	  return _react2.default.createElement(
-	    'div',
-	    null,
-	    'Four corner expand'
-	  );
-	}
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var FourCornerExpand = function (_React$Component) {
+	  _inherits(FourCornerExpand, _React$Component);
+
+	  function FourCornerExpand(props) {
+	    _classCallCheck(this, FourCornerExpand);
+
+	    var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(FourCornerExpand).call(this, props));
+
+	    _this.state = {
+	      expanded: false
+	    };
+	    _this.handleAll = _this.handleAll.bind(_this);
+	    _this.handleExpand = _this.handleExpand.bind(_this);
+	    return _this;
+	  }
+
+	  _createClass(FourCornerExpand, [{
+	    key: 'handleAll',
+	    value: function handleAll() {
+	      if (this.state.expanded) this.setState({ expanded: false });
+	    }
+	  }, {
+	    key: 'handleExpand',
+	    value: function handleExpand() {
+	      if (!this.state.expanded) this.setState({ expanded: true });
+	    }
+	  }, {
+	    key: 'render',
+	    value: function render() {
+	      var height = this.state.expanded ? '200vh' : '100vh';
+	      var width = this.state.expanded ? '200vw' : '100vw';
+
+	      return _react2.default.createElement(
+	        'div',
+	        { style: { height: height, width: width } },
+	        !this.state.expanded && _react2.default.createElement(
+	          _reactRouter.Link,
+	          { to: '/', style: { display: 'block', position: 'absolute', margin: '5px 7px' } },
+	          'Home'
+	        ),
+	        _react2.default.createElement(_Corner2.default, {
+	          title: 'Top Left', expandable: true, expanded: this.state.expanded, location: location,
+	          allCB: this.handleAll, expandCB: this.handleExpand,
+	          style: { backgroundColor: '#D0D0D0' }
+	        }),
+	        _react2.default.createElement(_Corner2.default, {
+	          title: 'Top Right', expandable: true, expanded: this.state.expanded, location: location,
+	          allCB: this.handleAll, expandCB: this.handleExpand,
+	          style: { backgroundColor: '#C0C0C0' }
+	        }),
+	        _react2.default.createElement(_Corner2.default, {
+	          title: 'Bottom Left', expandable: true, expanded: this.state.expanded, location: location,
+	          allCB: this.handleAll, expandCB: this.handleExpand,
+	          style: { backgroundColor: '#B0B0B0' }
+	        }),
+	        _react2.default.createElement(_Corner2.default, {
+	          title: 'Bottom Right', expandable: true, expanded: this.state.expanded, location: location,
+	          allCB: this.handleAll, expandCB: this.handleExpand,
+	          style: { backgroundColor: '#A0A0A0' }
+	        })
+	      );
+	    }
+	  }]);
+
+	  return FourCornerExpand;
+	}(_react2.default.Component);
 
 	exports.default = FourCornerExpand;
 
