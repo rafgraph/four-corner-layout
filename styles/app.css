@@ -1,8 +1,26 @@
+html, body, div, span, a, p, ul, li, h1, h2 {
+  margin: 0;
+  border: 0;
+  padding: 0;
+  box-sizing: inherit;
+  font: inherit;
+  text-decoration: inherit;
+  text-align: inherit;
+  color: inherit;
+  background: transparent;
+}
+
 body {
   font-family: helvetica neue, helvetica, sans-serif;
   font-weight: 300;
 }
 
-.left-arrow {
+a {
+  touch-action: manipulation;
+  -ms-touch-action: manipulation;
+}
+
+a:hover {
   fill: green;
+  color: green;
 }
