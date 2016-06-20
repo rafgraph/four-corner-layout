@@ -6,10 +6,9 @@ import Corner from './Corner';
 
 function Home() {
   const description =
-    'Four presentation pages on a single web page, each presentation page' +
-    'is immersive and dynamically resizes to the size of the' +
-    'window — inspired by print media: a newspaper’s fold combined' +
-    'with a magazine’s left and right pages.';
+    `Four presentation pages on a single web page, each presentation page
+    is immersive and dynamically resizes to the size of the
+    window.`;
 
   return (
     <div>
@@ -19,6 +18,7 @@ function Home() {
         <li><Link to="/four-corner-scroll">Four corner scroll</Link></li>
         <li><Link to="/four-corner-expand">Four corner expand</Link></li>
       </ul>
+      <h2>TESTs</h2>
       <Link to="/four-corner-scroll#tr">link four corner scroll top right</Link>
       <ArrowTest />
       <h2>corner:</h2>
