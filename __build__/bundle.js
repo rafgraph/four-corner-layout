@@ -79,7 +79,10 @@
 	  { path: '/', component: _App2.default },
 	  _react2.default.createElement(_reactRouter.IndexRoute, { component: _Home2.default }),
 	  _react2.default.createElement(_reactRouter.Route, { path: 'four-corner-scroll', component: _FourCornerScroll2.default }),
-	  _react2.default.createElement(_reactRouter.Route, { path: 'four-corner-expand', component: _FourCornerExpand2.default })
+	  _react2.default.createElement(_reactRouter.Route, { path: 'four-corner-expand', component: _FourCornerExpand2.default }),
+	  _react2.default.createElement(_reactRouter.Route, { path: '*', onEnter: function onEnter(nextState, replace) {
+	      return replace({ pathname: '/' });
+	    } })
 	);
 
 	function hashLinkScroll() {

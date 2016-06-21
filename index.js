@@ -14,6 +14,7 @@ const routes = (
     <IndexRoute component={Home} />
     <Route path="four-corner-scroll" component={FourCornerScroll} />
     <Route path="four-corner-expand" component={FourCornerExpand} />
+    <Route path="*" onEnter={(nextState, replace) => replace({ pathname: '/' })} />
   </Route>
 );
 
