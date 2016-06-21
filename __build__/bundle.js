@@ -26092,27 +26092,40 @@
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	function Home() {
-	  var description = 'Four presentation pages on a single web page, each presentation page\n    is immersive and dynamically resizes to the size of the\n    window.';
+	  var description = 'Four presentation pages on a single web page. Each presentation page\n    is immersive and dynamically resizes to fit the viewable area.';
 
 	  return _react2.default.createElement(
 	    'div',
-	    null,
+	    {
+	      className: 'home-page',
+	      style: {
+	        maxWidth: '350px',
+	        margin: 'auto',
+	        padding: '0 10px 25px 10px',
+	        position: 'relative',
+	        top: '50%',
+	        WebkitTransform: 'translate(0, -50%)',
+	        MozTransform: 'translate(0, -50%)',
+	        msTransform: 'translate(0, -50%)',
+	        transform: 'translate(0, -50%)'
+	      }
+	    },
 	    _react2.default.createElement(
 	      'h1',
-	      null,
+	      { style: { fontSize: '24px', marginBottom: '15px' } },
 	      'Four Corner Layout Concept'
 	    ),
 	    _react2.default.createElement(
-	      'div',
-	      null,
+	      'p',
+	      { style: { lineHeight: '1.4' } },
 	      description
 	    ),
 	    _react2.default.createElement(
 	      'ul',
-	      null,
+	      { style: { margin: '20px 0' } },
 	      _react2.default.createElement(
 	        'li',
-	        null,
+	        { style: { margin: '10px 0' } },
 	        _react2.default.createElement(
 	          _reactRouter.Link,
 	          { to: '/four-corner-scroll', className: 'hp-link' },
@@ -26121,7 +26134,7 @@
 	      ),
 	      _react2.default.createElement(
 	        'li',
-	        null,
+	        { style: { margin: '10px 0' } },
 	        _react2.default.createElement(
 	          _reactRouter.Link,
 	          { to: '/four-corner-expand', className: 'hp-link' },
@@ -26131,13 +26144,13 @@
 	    ),
 	    _react2.default.createElement(
 	      'div',
-	      null,
+	      { style: { color: '#A0A0A0', marginTop: '30px', fontSize: '14px' } },
 	      _react2.default.createElement(
 	        'a',
 	        {
-	          href: 'http://www.rafrex.com', style: { display: 'block' }
+	          href: 'http://www.rafrex.com', style: { display: 'block', margin: '3px 0' }
 	        },
-	        'concept and code by ',
+	        'Concept and code by ',
 	        _react2.default.createElement(
 	          'span',
 	          { className: 'hp-link' },
@@ -26152,9 +26165,9 @@
 	        _react2.default.createElement(
 	          'span',
 	          { className: 'hp-link' },
-	          'code'
+	          'Code'
 	        ),
-	        ' available on github'
+	        ' available on GitHub'
 	      )
 	    )
 	  );

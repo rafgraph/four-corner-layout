@@ -56,3 +56,42 @@ a:hover, a:active {
   color: rgb(0, 144, 0);
   fill: rgb(0, 144, 0);
 }
+
+
+/*home page links*/
+.hp-link {
+  border-bottom: 1px dotted rgb(0, 168, 0);
+}
+
+.home-page a:hover, .home-page a:active {
+  color: inherit;
+  fill: inherit;
+}
+
+a:hover .hp-link, a:active .hp-link, .hp-link:hover, .hp-link:active {
+  color: black;
+  border-bottom: 1px solid rgb(0, 168, 0);
+}
+
+.current-input-touch .hp-link:hover, .current-input-touch a:hover .hp-link {
+  color: inherit;
+  border-bottom: 1px dotted rgb(0, 168, 0);
+}
+
+.current-input-touch .hp-link:active, .current-input-touch a:active .hp-link {
+  color: black;
+  border-bottom: 1px dashed rgb(0, 168, 0);
+}
+
+/*custom bullets*/
+li {
+  list-style: none;
+  padding-left: 18px;
+  text-indent: -15px;
+  margin: 0.5vh 0;
+}
+
+li:before {
+  content: "\2013";
+  padding-right: 7px;
+}
