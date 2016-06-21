@@ -31,15 +31,10 @@ html, body, #root {
   height: 100%;
 }
 
-/*root div in index.html*/
-#root {
-  background-color: #F0F0F0;
-}
-
 /*links*/
 a {
-  touch-action: manipulation;
   -ms-touch-action: manipulation;
+  touch-action: manipulation;
 }
 
 a:hover, a:active {

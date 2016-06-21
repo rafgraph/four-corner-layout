@@ -26097,77 +26097,84 @@
 	  return _react2.default.createElement(
 	    'div',
 	    {
-	      className: 'home-page',
 	      style: {
-	        maxWidth: '350px',
-	        margin: 'auto',
-	        padding: '0 10px 25px 10px',
-	        position: 'relative',
-	        top: '50%',
-	        WebkitTransform: 'translate(0, -50%)',
-	        MozTransform: 'translate(0, -50%)',
-	        msTransform: 'translate(0, -50%)',
-	        transform: 'translate(0, -50%)'
+	        display: 'flex',
+	        flexDirection: 'column',
+	        justifyContent: 'center',
+	        alignItems: 'center',
+	        minHeight: '100%',
+	        minWidth: '100%',
+	        backgroundColor: '#F0F0F0'
 	      }
 	    },
 	    _react2.default.createElement(
-	      'h1',
-	      { style: { fontSize: '24px', marginBottom: '15px' } },
-	      'Four Corner Layout Concept'
-	    ),
-	    _react2.default.createElement(
-	      'p',
-	      { style: { lineHeight: '1.4' } },
-	      description
-	    ),
-	    _react2.default.createElement(
-	      'ul',
-	      { style: { margin: '20px 0' } },
-	      _react2.default.createElement(
-	        'li',
-	        { style: { margin: '10px 0' } },
-	        _react2.default.createElement(
-	          _reactRouter.Link,
-	          { to: '/four-corner-scroll', className: 'hp-link' },
-	          'Four corner scroll'
-	        )
-	      ),
-	      _react2.default.createElement(
-	        'li',
-	        { style: { margin: '10px 0' } },
-	        _react2.default.createElement(
-	          _reactRouter.Link,
-	          { to: '/four-corner-expand', className: 'hp-link' },
-	          'Four corner expand'
-	        )
-	      )
-	    ),
-	    _react2.default.createElement(
 	      'div',
-	      { style: { color: '#A0A0A0', marginTop: '30px', fontSize: '14px' } },
+	      {
+	        className: 'home-page',
+	        style: {
+	          maxWidth: '350px',
+	          margin: '4vh 10px 10vh 10px'
+	        }
+	      },
 	      _react2.default.createElement(
-	        'a',
-	        {
-	          href: 'http://www.rafrex.com', style: { display: 'block', margin: '3px 0' }
-	        },
-	        'Concept and code by ',
+	        'h1',
+	        { style: { fontSize: '24px', marginBottom: '15px' } },
+	        'Four Corner Layout Concept'
+	      ),
+	      _react2.default.createElement(
+	        'p',
+	        { style: { lineHeight: '1.4' } },
+	        description
+	      ),
+	      _react2.default.createElement(
+	        'ul',
+	        { style: { margin: '20px 0' } },
 	        _react2.default.createElement(
-	          'span',
-	          { className: 'hp-link' },
-	          'Rafael Pedicini'
+	          'li',
+	          { style: { margin: '10px 0' } },
+	          _react2.default.createElement(
+	            _reactRouter.Link,
+	            { to: '/four-corner-scroll', className: 'hp-link' },
+	            'Four corner scroll'
+	          )
+	        ),
+	        _react2.default.createElement(
+	          'li',
+	          { style: { margin: '10px 0' } },
+	          _react2.default.createElement(
+	            _reactRouter.Link,
+	            { to: '/four-corner-expand', className: 'hp-link' },
+	            'Four corner expand'
+	          )
 	        )
 	      ),
 	      _react2.default.createElement(
-	        'a',
-	        {
-	          href: 'http://github.com/rafrex/four-corner-layout', style: { display: 'block' }
-	        },
+	        'div',
+	        { style: { color: '#A0A0A0', marginTop: '30px', fontSize: '14px' } },
 	        _react2.default.createElement(
-	          'span',
-	          { className: 'hp-link' },
-	          'Code'
+	          'a',
+	          {
+	            href: 'http://www.rafrex.com', style: { display: 'block', margin: '3px 0' }
+	          },
+	          'Concept and code by ',
+	          _react2.default.createElement(
+	            'span',
+	            { className: 'hp-link' },
+	            'Rafael Pedicini'
+	          )
 	        ),
-	        ' available on GitHub'
+	        _react2.default.createElement(
+	          'a',
+	          {
+	            href: 'http://github.com/rafrex/four-corner-layout', style: { display: 'block' }
+	          },
+	          _react2.default.createElement(
+	            'span',
+	            { className: 'hp-link' },
+	            'Code'
+	          ),
+	          ' available on GitHub'
+	        )
 	      )
 	    )
 	  );
