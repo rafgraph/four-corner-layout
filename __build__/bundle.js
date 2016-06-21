@@ -26693,16 +26693,30 @@
 
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
+	var propTypes = {
+	  location: _react.PropTypes.object.isRequired
+	};
+
 	var FourCornerExpand = function (_React$Component) {
 	  _inherits(FourCornerExpand, _React$Component);
 
 	  function FourCornerExpand(props) {
 	    _classCallCheck(this, FourCornerExpand);
 
+	    console.log(props);
+
 	    var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(FourCornerExpand).call(this, props));
 
 	    _this.state = {
-	      expanded: false
+	      expanded: function () {
+	        var hashRoutes = {
+	          'top-left': true,
+	          'top-right': true,
+	          'bottom-left': true,
+	          'bottom-right': true
+	        };
+	        return hashRoutes[props.location.hash.replace('#', '')] === true;
+	      }()
 	    };
 	    _this.handleAll = _this.handleAll.bind(_this);
 	    _this.handleExpand = _this.handleExpand.bind(_this);
@@ -26759,6 +26773,8 @@
 
 	  return FourCornerExpand;
 	}(_react2.default.Component);
+
+	FourCornerExpand.propTypes = propTypes;
 
 	exports.default = FourCornerExpand;
 

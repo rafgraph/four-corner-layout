@@ -1,12 +1,25 @@
-import React from 'react';
+import React, { PropTypes } from 'react';
 import { Link } from 'react-router';
 import Corner from './Corner';
 
+const propTypes = {
+  location: PropTypes.object.isRequired,
+};
+
 class FourCornerExpand extends React.Component {
   constructor(props) {
+    console.log(props);
     super(props);
     this.state = {
-      expanded: false,
+      expanded: (() => {
+        const hashRoutes = {
+          'top-left': true,
+          'top-right': true,
+          'bottom-left': true,
+          'bottom-right': true,
+        };
+        return hashRoutes[props.location.hash.replace('#', '')] === true;
+      })(),
     };
     this.handleAll = this.handleAll.bind(this);
     this.handleExpand = this.handleExpand.bind(this);
@@ -55,5 +68,7 @@ class FourCornerExpand extends React.Component {
     );
   }
 }
+
+FourCornerExpand.propTypes = propTypes;
 
 export default FourCornerExpand;
