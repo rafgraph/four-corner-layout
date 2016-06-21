@@ -8,7 +8,6 @@ const propTypes = {
 
 class FourCornerExpand extends React.Component {
   constructor(props) {
-    console.log(props);
     super(props);
     this.state = {
       expanded: (() => {
