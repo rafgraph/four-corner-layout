@@ -26327,10 +26327,7 @@
 
 	  return _react2.default.createElement(
 	    'div',
-	    {
-	      id: id,
-	      style: _extends(style, { float: id.split('-')[1], height: '50%', width: '50%' })
-	    },
+	    { style: _extends(style, { float: id.split('-')[1], height: '50%', width: '50%' }) },
 	    expanded && _react2.default.createElement(
 	      _reactRouter.Link,
 	      { to: '/', style: { display: 'block', position: 'absolute', margin: '5px 7px' } },
@@ -26339,32 +26336,39 @@
 	    _react2.default.createElement(
 	      'div',
 	      {
+	        id: id,
 	        style: {
-	          position: 'relative',
-	          top: '50%',
-	          transform: 'translate(0, -50%)',
-	          WebkitTransform: 'translate(0, -50%)',
-	          MozTransform: 'translate(0, -50%)',
-	          msTransform: 'translate(0, -50%)',
-	          textAlign: 'center',
-	          paddingBottom: '3vh'
+	          height: '100%', width: '100%',
+	          display: 'flex',
+	          flexDirection: 'column',
+	          justifyContent: 'center',
+	          alignItems: 'center'
 	        }
 	      },
 	      _react2.default.createElement(
-	        'h2',
-	        { style: { fontSize: '20px', marginBottom: '3px' } },
+	        'div',
+	        {
+	          style: {
+	            textAlign: 'center',
+	            paddingBottom: '3vh'
+	          }
+	        },
 	        _react2.default.createElement(
+	          'h2',
+	          { style: { fontSize: '20px', marginBottom: '3px' } },
+	          _react2.default.createElement(
+	            _reactRouter.Link,
+	            { to: location.pathname + '#' + id, onClick: expandCB },
+	            title
+	          )
+	        ),
+	        expandable && expanded && _react2.default.createElement(
 	          _reactRouter.Link,
-	          { to: location.pathname + '#' + id, onClick: expandCB },
-	          title
-	        )
-	      ),
-	      expandable && expanded && _react2.default.createElement(
-	        _reactRouter.Link,
-	        { to: location.pathname, onClick: allCB, style: { display: 'block' } },
-	        'All'
-	      ),
-	      expanded && getArrows()
+	          { to: location.pathname, onClick: allCB },
+	          'All'
+	        ),
+	        expanded && getArrows()
+	      )
 	    )
 	  );
 	}

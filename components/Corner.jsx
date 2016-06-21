@@ -62,36 +62,36 @@ function Corner({ title, expandable, expanded, allCB, expandCB, location, style 
   }
 
   return (
-    <div
-      id={id}
-      style={Object.assign(style,
-        { float: id.split('-')[1], height: `50%`, width: `50%` }
-      )}
-    >
+    <div style={Object.assign(style, { float: id.split('-')[1], height: '50%', width: '50%' })}>
       {expanded &&
         <Link to="/" style={{ display: 'block', position: 'absolute', margin: '5px 7px' }}>
           Home
         </Link>
       }
       <div
+        id={id}
         style={{
-          position: 'relative',
-          top: '50%',
-          transform: 'translate(0, -50%)',
-          WebkitTransform: 'translate(0, -50%)',
-          MozTransform: 'translate(0, -50%)',
-          msTransform: 'translate(0, -50%)',
-          textAlign: 'center',
-          paddingBottom: '3vh',
+          height: '100%', width: '100%',
+          display: 'flex',
+          flexDirection: 'column',
+          justifyContent: 'center',
+          alignItems: 'center',
         }}
       >
-        <h2 style={{ fontSize: '20px', marginBottom: '3px' }}>
-          <Link to={`${location.pathname}#${id}`} onClick={expandCB}>{title}</Link>
-        </h2>
-        {(expandable && expanded) &&
-          <Link to={location.pathname} onClick={allCB} style={{ display: 'block' }}>All</Link>
-        }
-        {expanded && getArrows()}
+        <div
+          style={{
+            textAlign: 'center',
+            paddingBottom: '3vh',
+          }}
+        >
+          <h2 style={{ fontSize: '20px', marginBottom: '3px' }}>
+            <Link to={`${location.pathname}#${id}`} onClick={expandCB}>{title}</Link>
+          </h2>
+          {(expandable && expanded) &&
+            <Link to={location.pathname} onClick={allCB}>All</Link>
+          }
+          {expanded && getArrows()}
+        </div>
       </div>
     </div>
   );
