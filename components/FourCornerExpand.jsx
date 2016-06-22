@@ -6,22 +6,27 @@ const propTypes = {
   location: PropTypes.object.isRequired,
 };
 
+const hashRoutes = {
+  'top-left': true,
+  'top-right': true,
+  'bottom-left': true,
+  'bottom-right': true,
+};
+
 class FourCornerExpand extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      expanded: (() => {
-        const hashRoutes = {
-          'top-left': true,
-          'top-right': true,
-          'bottom-left': true,
-          'bottom-right': true,
-        };
-        return hashRoutes[props.location.hash.replace('#', '')] === true;
-      })(),
+      expanded: hashRoutes[props.location.hash.replace('#', '')] === true,
     };
     this.handleAll = this.handleAll.bind(this);
     this.handleExpand = this.handleExpand.bind(this);
+  }
+
+  componentWillReceiveProps(nextProps) {
+    this.setState({
+      expanded: hashRoutes[nextProps.location.hash.replace('#', '')] === true,
+    });
   }
 
   handleAll() {
