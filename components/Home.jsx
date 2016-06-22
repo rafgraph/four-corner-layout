@@ -37,16 +37,12 @@ function Home() {
           </Link></li>
         </ul>
         <div style={{ color: '#A0A0A0', marginTop: '30px', fontSize: '14px' }}>
-          <a
-            href="http://www.rafrex.com" style={{ display: 'block', margin: '3px 0' }}
-          >
+          <div style={{ margin: '3px 0' }}><a href="http://www.rafrex.com">
             Concept and code by <span className="hp-link">Rafael Pedicini</span>
-          </a>
-          <a
-            href="http://github.com/rafrex/four-corner-layout" style={{ display: 'block' }}
-          >
+          </a></div>
+          <div><a href="http://github.com/rafrex/four-corner-layout">
             <span className="hp-link">Code</span> available on GitHub
-          </a>
+          </a></div>
         </div>
       </div>
     </div>
