@@ -29,10 +29,13 @@ const defaultPropsDiagonalArrow = {
 function LeftArrow({ width, height, scale, className, title = 'Left Arrow', ...other }) {
   return (
     <svg
-      {...other}
       className={`arrow left-arrow${className ? ` ${className}` : ''}`}
-      xmlns="http://www.w3.org/2000/svg" width={width * scale} height={height * scale} viewBox="0 0 900 300"
+      xmlns="http://www.w3.org/2000/svg"
+      width={(width * scale) || width}
+      height={(height * scale) || height}
+      viewBox="0 0 900 300"
       aria-label={title}
+      {...other}
     >
       <title>{title}</title>
       <path d="M900 183.418H232.596V300L0 150 232.596 0v116.582H900v66.836z" />
@@ -43,10 +46,13 @@ function LeftArrow({ width, height, scale, className, title = 'Left Arrow', ...o
 function RightArrow({ width, height, scale, className, title = 'Right Arrow', ...other }) {
   return (
     <svg
-      {...other}
       className={`arrow right-arrow${className ? ` ${className}` : ''}`}
-      xmlns="http://www.w3.org/2000/svg" width={width * scale} height={height * scale} viewBox="0 0 900 300"
+      xmlns="http://www.w3.org/2000/svg"
+      width={(width * scale) || width}
+      height={(height * scale) || height}
+      viewBox="0 0 900 300"
       aria-label={title}
+      {...other}
     >
       <title>{title}</title>
       <path d="M0 116.582h667.404V0L900 150 667.404 300V183.418H0v-66.836z" />
@@ -57,10 +63,13 @@ function RightArrow({ width, height, scale, className, title = 'Right Arrow', ..
 function TopArrow({ width, height, scale, className, title = 'Top Arrow', ...other }) {
   return (
     <svg
-      {...other}
       className={`arrow top-arrow${className ? ` ${className}` : ''}`}
-      xmlns="http://www.w3.org/2000/svg" width={width * scale} height={height * scale} viewBox="0 0 300 900"
+      xmlns="http://www.w3.org/2000/svg"
+      width={(width * scale) || width}
+      height={(height * scale) || height}
+      viewBox="0 0 300 900"
       aria-label={title}
+      {...other}
     >
       <title>{title}</title>
       <path d="M116.582 900V232.596H0L150 0l150 232.596H183.418V900h-66.836z" />
@@ -71,10 +80,13 @@ function TopArrow({ width, height, scale, className, title = 'Top Arrow', ...oth
 function BottomArrow({ width, height, scale, className, title = 'Bottom Arrow', ...other }) {
   return (
     <svg
-      {...other}
       className={`arrow bottom-arrow${className ? ` ${className}` : ''}`}
-      xmlns="http://www.w3.org/2000/svg" width={width * scale} height={height * scale} viewBox="0 0 300 900"
+      xmlns="http://www.w3.org/2000/svg"
+      width={(width * scale) || width}
+      height={(height * scale) || height}
+      viewBox="0 0 300 900"
       aria-label={title}
+      {...other}
     >
       <title>{title}</title>
       <path d="M183.418 0v667.404H300L150 900 0 667.404h116.582V0h66.836z" />
@@ -85,10 +97,13 @@ function BottomArrow({ width, height, scale, className, title = 'Bottom Arrow', 
 function TopLeftArrow({ width, height, scale, className, title = 'Top Left Arrow', ...other }) {
   return (
     <svg
-      {...other}
       className={`arrow top-left-arrow${className ? ` ${className}` : ''}`}
-      xmlns="http://www.w3.org/2000/svg" width={width * scale} height={height * scale} viewBox="0 0 660.026 660.026"
+      xmlns="http://www.w3.org/2000/svg"
+      width={(width * scale) || width}
+      height={(height * scale) || height}
+      viewBox="0 0 660.026 660.026"
       aria-label={title}
+      {...other}
     >
       <title>{title}</title>
       <path
@@ -102,10 +117,13 @@ function TopLeftArrow({ width, height, scale, className, title = 'Top Left Arrow
 function TopRightArrow({ width, height, scale, className, title = 'Top Right Arrow', ...other }) {
   return (
     <svg
-      {...other}
       className={`arrow top-right-arrow${className ? ` ${className}` : ''}`}
-      xmlns="http://www.w3.org/2000/svg" width={width * scale} height={height * scale} viewBox="0 0 660.026 660.026"
+      xmlns="http://www.w3.org/2000/svg"
+      width={(width * scale) || width}
+      height={(height * scale) || height}
+      viewBox="0 0 660.026 660.026"
       aria-label={title}
+      {...other}
     >
       <title>{title}</title>
       <path
@@ -121,10 +139,13 @@ function BottomLeftArrow(
 ) {
   return (
     <svg
-      {...other}
       className={`arrow bottom-left-arrow${className ? ` ${className}` : ''}`}
-      xmlns="http://www.w3.org/2000/svg" width={width * scale} height={height * scale} viewBox="0 0 660.026 660.026"
+      xmlns="http://www.w3.org/2000/svg"
+      width={(width * scale) || width}
+      height={(height * scale) || height}
+      viewBox="0 0 660.026 660.026"
       aria-label={title}
+      {...other}
     >
       <title>{title}</title>
       <path
@@ -140,10 +161,13 @@ function BottomRightArrow(
 ) {
   return (
     <svg
-      {...other}
       className={`arrow bottom-right-arrow${className ? ` ${className}` : ''}`}
-      xmlns="http://www.w3.org/2000/svg" width={width * scale} height={height * scale} viewBox="0 0 660.026 660.026"
+      xmlns="http://www.w3.org/2000/svg"
+      width={(width * scale) || width}
+      height={(height * scale) || height}
+      viewBox="0 0 660.026 660.026"
       aria-label={title}
+      {...other}
     >
       <title>{title}</title>
       <path
