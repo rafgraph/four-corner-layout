@@ -13,28 +13,29 @@ Four presentation pages on a single web page. Each presentation page is immersiv
 
 #### SVG Arrows
 - [SvgArrows.jsx](https://github.com/rafrex/four-corner-layout/blob/gh-pages/components/SvgArrows.jsx)
-- Each svg arrow is wrapped in a stateless react component, which can optionally receive the following props (all have defaults that can be overwritten except for className, which is merged with the default value):
-  - width
+- Each svg arrow is wrapped in a stateless react component, which can optionally receive the following props (all have defaults that can be overwritten except for `className`, which is merged with the default value):
+  - `width`
     - svg width attribute (not style attribute)
-    - type: string, can be unit-less, e.g. '20', '20px', '20vw', etc
-  - height
+    - type: string, can be unit-less, e.g. `'20'`, `'20px'`, `'20vw'`, etc
+  - `height`
     - svg height attribute (not style attribute)
-    - type: string, can be unit-less, e.g. '20', '20px', '20vw', etc
-  - scale
+    - type: string, can be unit-less, e.g. `'20'`, `'20px'`, `'20vw'`, etc
+  - `scale`
     - multiplier to default (or supplied) unit-less width and height
-    - type: number (width and height must be unit-less to use scale), e.g. 1.5
-  - title
-    - svg title attribute, also used for the default aria-label
-    - type: string, e.g. 'Go Left'
-  - className
+    - type: number (width and height must be unit-less to use scale), e.g. `1.5`
+  - `title`
+    - svg title attribute, also used for the default `aria-label`
+    - type: string, e.g. `'Go Left'`
+  - `className`
     - classes to merge with default classes
-    - default classes: 'arrow [direction]-arrow' (defaults can't be overwritten)
-    - type: string, e.g. 'go-left another-class'
-  - style
+    - default classes: `'arrow [direction]-arrow'` (defaults can't be overwritten)
+    - type: string, e.g. `'go-left another-class'`
+  - `style`
     - svg style attribute
-    - type: react style object, e.g. { display: 'block', margin: 'auto' }
-    - note that the fill property is defined in css so it can be changed with css :hover/:active selectors
-  - ... and every other prop you pass in, including viewBox
+    - type: react style object, e.g. `{ display: 'block', margin: 'auto' }`
+    - note that the fill property is defined in css so it can be changed with css `:hover`/`:active` selectors
+    - note that there is no default style object so it is added as part of `...other`
+  - ... and every other prop you pass in, including `viewBox`
 
 ```javascript
 import react, { PropTypes } from 'react';
@@ -59,12 +60,14 @@ const defaultPropsHorizontalArrow = {
 function LeftArrow({ width, height, scale, className, title = 'Left Arrow', ...other }) {
   return (
     <svg
+      // merge classes
       className={`arrow left-arrow${className ? ` ${className}` : ''}`}
       xmlns="http://www.w3.org/2000/svg"
       width={(width * scale) || width}
       height={(height * scale) || height}
       viewBox="0 0 900 300"
       aria-label={title}
+      // by putting ...other last it will override any previously defined attributes
       {...other}
     >
       <title>{title}</title>
