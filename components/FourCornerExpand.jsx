@@ -2,10 +2,6 @@ import React, { PropTypes } from 'react';
 import { Link } from 'react-router';
 import Corner from './Corner';
 
-const propTypes = {
-  location: PropTypes.object.isRequired,
-};
-
 const hashRoutes = {
   'top-left': true,
   'top-right': true,
@@ -14,6 +10,10 @@ const hashRoutes = {
 };
 
 class FourCornerExpand extends React.Component {
+  static propTypes = {
+    location: PropTypes.object.isRequired,
+  }
+
   constructor(props) {
     super(props);
     this.state = {
@@ -72,7 +72,5 @@ class FourCornerExpand extends React.Component {
     );
   }
 }
-
-FourCornerExpand.propTypes = propTypes;
 
 export default FourCornerExpand;
