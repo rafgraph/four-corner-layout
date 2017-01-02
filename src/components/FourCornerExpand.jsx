@@ -1,4 +1,5 @@
 import React, { PropTypes } from 'react';
+import Interactive from 'react-interactive';
 import { Link } from 'react-router';
 import Corner from './Corner';
 
@@ -44,9 +45,16 @@ class FourCornerExpand extends React.Component {
     return (
       <div style={{ height, width }}>
         {!this.state.expanded &&
-          <Link to="/" style={{ display: 'block', position: 'absolute', margin: '5px 7px' }}>
+          <Interactive
+            as={Link}
+            hover={{ color: 'rgb(0, 144, 0)' }}
+            active="hover"
+            focusFromTab={{ outline: '2px solid rgb(0, 152, 0)', outlineOffset: '2px' }}
+            to="/"
+            style={{ display: 'block', position: 'absolute', margin: '5px 7px' }}
+          >
             Home
-          </Link>
+          </Interactive>
         }
         <Corner
           title="Top Left" expandable expanded={this.state.expanded} location={location}

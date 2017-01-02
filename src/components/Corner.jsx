@@ -1,4 +1,5 @@
 import React, { PropTypes } from 'react';
+import Interactive from 'react-interactive';
 import { Link } from 'react-router';
 import {
   LeftArrow, RightArrow, TopArrow, BottomArrow,
@@ -50,23 +51,40 @@ function Corner({ title, expandable, expanded, allCB, expandCB, location, style 
     return arrowOrder().map((link, i) => {
       const Arrow = link[1];
       return (
-        <Link
+        <Interactive
+          as={Link}
           key={i}
           to={`${location.pathname}#${link[0]}`}
+          hover={{ fill: 'rgb(0, 144, 0)' }}
+          active="hover"
+          focusFromTab={{ outline: '2px solid rgb(0, 152, 0)', outlineOffset: '2px' }}
           style={{ width: '21px', display: 'block', margin: 'auto', padding: '5px 0' }}
         >
           <Arrow style={{ display: 'block', margin: 'auto' }} />
-        </Link>
+        </Interactive>
       );
     });
   }
 
+  const linkStyle = {
+    hover: { color: 'rgb(0, 144, 0)' },
+    active: 'hover',
+    focusFromTab: { outline: '2px solid rgb(0, 152, 0)', outlineOffset: '2px' },
+  };
+
   return (
     <div style={Object.assign(style, { float: id.split('-')[1], height: '50%', width: '50%' })}>
       {expanded &&
-        <Link to="/" style={{ display: 'block', position: 'absolute', margin: '5px 7px' }}>
+        <Interactive
+          as={Link}
+          hover={{ color: 'rgb(0, 144, 0)' }}
+          active="hover"
+          focusFromTab={{ outline: '2px solid rgb(0, 152, 0)', outlineOffset: '2px' }}
+          to="/"
+          style={{ display: 'block', position: 'absolute', margin: '5px 7px' }}
+        >
           Home
-        </Link>
+        </Interactive>
       }
       <div
         id={id}
@@ -86,10 +104,14 @@ function Corner({ title, expandable, expanded, allCB, expandCB, location, style 
           }}
         >
           <h2 style={{ fontSize: '20px', marginBottom: '3px' }}>
-            <Link to={`${location.pathname}#${id}`} onClick={expandCB}>{title}</Link>
+            <Interactive as={Link} to={`${location.pathname}#${id}`} onClick={expandCB} {...linkStyle}>
+              {title}
+            </Interactive>
           </h2>
           {(expandable && expanded) &&
-            <Link to={location.pathname} onClick={allCB}>All</Link>
+            <Interactive as={Link} to={location.pathname} onClick={allCB} {...linkStyle}>
+              All
+            </Interactive>
           }
           {expanded && getArrows()}
         </div>
