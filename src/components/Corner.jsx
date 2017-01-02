@@ -1,6 +1,7 @@
 import React, { PropTypes } from 'react';
 import Interactive from 'react-interactive';
 import { Link } from 'react-router';
+import objectAssign from 'object-assign';
 import {
   LeftArrow, RightArrow, TopArrow, BottomArrow,
   TopLeftArrow, TopRightArrow, BottomLeftArrow, BottomRightArrow,
@@ -73,7 +74,7 @@ function Corner({ title, expandable, expanded, allCB, expandCB, location, style 
   };
 
   return (
-    <div style={Object.assign(style, { float: id.split('-')[1], height: '50%', width: '50%' })}>
+    <div style={objectAssign(style, { float: id.split('-')[1], height: '50%', width: '50%' })}>
       {expanded &&
         <Interactive
           as={Link}
