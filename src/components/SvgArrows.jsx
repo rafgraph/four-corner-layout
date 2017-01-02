@@ -135,7 +135,7 @@ function TopRightArrow({ width, height, scale, className, title = 'Top Right Arr
 }
 
 function BottomLeftArrow(
-  { width, height, scale, className, title = 'Bottom Left Arrow', ...other }
+  { width, height, scale, className, title = 'Bottom Left Arrow', ...other },
 ) {
   return (
     <svg
@@ -157,7 +157,7 @@ function BottomLeftArrow(
 }
 
 function BottomRightArrow(
-  { width, height, scale, className, title = 'Bottom Right Arrow', ...other }
+  { width, height, scale, className, title = 'Bottom Right Arrow', ...other },
 ) {
   return (
     <svg

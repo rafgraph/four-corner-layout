@@ -5,7 +5,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Four Corner Layout</title>
     <meta name="description" content="Design concept for four presentation pages on a single web page. Each presentation page is immersive and dynamically resizes to fit the viewable area. Concept and code by Rafael Pedicini.">
-    <style>html{background-color: #F0F0F0;}</style>
+
+    <style>
+      html, body, div, span, a, p, ul, li, h1, h2, h3, h4, h5, h6, code {
+        margin: 0;
+        border: 0;
+        padding: 0;
+        box-sizing: inherit;
+        font: inherit;
+        text-decoration: inherit;
+        text-align: inherit;
+        color: inherit;
+        background: transparent;
+      }
+      /*set height to 100% to pass down window height (without scroll bars) to react app*/
+      html, body, #root { height: 100%; }
+      html { background-color: rgb(0, 120, 0); }
+      #root { background-color: #F0F0F0; }
+    </style>
 
     <!-- start favicon -->
     <link rel="apple-touch-icon" sizes="57x57" href="http://favicon.rafrex.com/green-grid-144-168-192/apple-touch-icon-57x57.png">
@@ -55,8 +72,6 @@
       }(window.location))
     </script>
     <!-- End Single Page Apps for GitHub Pages -->
-
-    <link rel="stylesheet" href="/styles/app.css">
 
     <!-- Start Google Analytics -->
     <script>

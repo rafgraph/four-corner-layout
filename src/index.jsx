@@ -1,7 +1,6 @@
 import React from 'react';
 import { render } from 'react-dom';
 import { Router, Route, IndexRoute, browserHistory } from 'react-router';
-import 'current-input';
 
 import App from './components/App';
 import Home from './components/Home';
@@ -39,5 +38,5 @@ render(
     routes={routes}
     onUpdate={hashLinkScroll}
   />,
-  document.getElementById('root')
+  document.getElementById('root'),
 );

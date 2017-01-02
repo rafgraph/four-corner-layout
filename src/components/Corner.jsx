@@ -71,7 +71,8 @@ function Corner({ title, expandable, expanded, allCB, expandCB, location, style 
       <div
         id={id}
         style={{
-          height: '100%', width: '100%',
+          height: '100%',
+          width: '100%',
           display: 'flex',
           flexDirection: 'column',
           justifyContent: 'center',
