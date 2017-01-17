@@ -26,6 +26,7 @@ function Home() {
       outlineOffset: '2px',
       color: 'black',
     },
+    touchActiveTapOnly: true,
   };
 
   const childLinkStyle = {
@@ -77,6 +78,7 @@ function Home() {
               interactiveChild
               focus={{}}
               touchActive={{}}
+              touchActiveTapOnly
               href="http://www.rafaelpedicini.com"
               target="_blank"
               rel="noreferrer noopener"
@@ -90,6 +92,7 @@ function Home() {
               interactiveChild
               focus={{}}
               touchActive={{}}
+              touchActiveTapOnly
               href="http://github.com/rafrex/four-corner-layout"
               target="_blank" rel="noreferrer noopener"
             >

@@ -52,6 +52,7 @@ class FourCornerExpand extends React.Component {
             focusFromTab={{ outline: '2px solid rgb(0, 152, 0)', outlineOffset: '2px' }}
             to="/"
             style={{ display: 'block', position: 'absolute', margin: '5px 7px' }}
+            touchActiveTapOnly
           >
             Home
           </Interactive>

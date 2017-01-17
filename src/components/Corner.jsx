@@ -60,6 +60,7 @@ function Corner({ title, expandable, expanded, allCB, expandCB, location, style 
           active="hover"
           focusFromTab={{ outline: '2px solid rgb(0, 152, 0)', outlineOffset: '2px' }}
           style={{ width: '21px', display: 'block', margin: 'auto', padding: '5px 0' }}
+          touchActiveTapOnly
         >
           <Arrow style={{ display: 'block', margin: 'auto' }} />
         </Interactive>
@@ -71,6 +72,7 @@ function Corner({ title, expandable, expanded, allCB, expandCB, location, style 
     hover: { color: 'rgb(0, 144, 0)' },
     active: 'hover',
     focusFromTab: { outline: '2px solid rgb(0, 152, 0)', outlineOffset: '2px' },
+    touchActiveTapOnly: true,
   };
 
   return (
@@ -78,9 +80,7 @@ function Corner({ title, expandable, expanded, allCB, expandCB, location, style 
       {expanded &&
         <Interactive
           as={Link}
-          hover={{ color: 'rgb(0, 144, 0)' }}
-          active="hover"
-          focusFromTab={{ outline: '2px solid rgb(0, 152, 0)', outlineOffset: '2px' }}
+          {...linkStyle}
           to="/"
           style={{ display: 'block', position: 'absolute', margin: '5px 7px' }}
         >
