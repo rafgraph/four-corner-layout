@@ -7,9 +7,9 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/rafrex/four-corner-layout.git"
+    "url": "git+https://github.com/rafgraph/four-corner-layout.git"
   },
-  "author": "Rafael Pedicini <code@rafrex.com>",
+  "author": "Rafael Pedicini <rafael@rafgraph.dev>",
   "license": "MIT",
   "dependencies": {
     "object-assign": "^4.1.0",

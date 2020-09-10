@@ -2,17 +2,17 @@
 
 Four presentation pages on a single web page. Each presentation page is immersive and dynamically resizes to fit the viewable area.
 
-[Live Concept](http://four-corner-layout.rafrex.com)
+[Live Concept](https://four-corner-layout.rafgraph.dev)
 
 ## Code Notes
 
 #### Corner Component
-- [Corner.jsx](https://github.com/rafrex/four-corner-layout/blob/gh-pages/components/Corner.jsx)
+- [Corner.jsx](https://github.com/rafgraph/four-corner-layout/blob/gh-pages/components/Corner.jsx)
 - A single corner component that is a pure function of its props (stateless functional react component)
 - Based on the props it receives it renders itself as either the top-left, top-right, bottom-left or bottom-right corner in expanded or non-expanded state
 
 #### SVG Arrows
-- [SvgArrows.jsx](https://github.com/rafrex/four-corner-layout/blob/gh-pages/components/SvgArrows.jsx)
+- [SvgArrows.jsx](https://github.com/rafgraph/four-corner-layout/blob/gh-pages/components/SvgArrows.jsx)
 - Each svg arrow is wrapped in a stateless react component, which can optionally receive the following props (all have defaults that can be overwritten except for `className`, which is merged with the default value):
   - `width`
     - svg width attribute (not style attribute)

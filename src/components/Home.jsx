@@ -79,7 +79,7 @@ function Home() {
               focus={{}}
               touchActive={{}}
               touchActiveTapOnly
-              href="http://www.rafaelpedicini.com"
+              href="https://rafaelpedicini.com"
               target="_blank"
               rel="noreferrer noopener"
             >
@@ -93,7 +93,7 @@ function Home() {
               focus={{}}
               touchActive={{}}
               touchActiveTapOnly
-              href="http://github.com/rafrex/four-corner-layout"
+              href="https://github.com/rafgraph/four-corner-layout"
               target="_blank" rel="noreferrer noopener"
             >
               <span {...childLinkStyle}>Code</span> available on GitHub
